@@ -36,7 +36,7 @@ Linear Regression was found to be the best performing model for this task.
 
 ## Results
 - Dataset size: 1000 designs
-- Correlation between estimated and actual depth: 0.9793
+- Correlation between estimated and actual depth: 0.9598
 - Mean estimated depth: 15.078
 - Mean actual depth: 14.573
 - Complexity range: 1-5
