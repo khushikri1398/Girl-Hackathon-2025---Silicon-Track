@@ -29,37 +29,36 @@ module complex_datapath_0687(
         
         internal0 = c;
         
-        internal1 = a;
+        internal1 = d;
         
-        internal2 = a;
+        internal2 = c;
         
         
         // Second level operations depending on mode
         case(mode[3:2])
             
             2'd0: begin
-                temp0 = (internal0 - 6'd50);
-                temp1 = (d - c);
-                temp0 = (~6'd39);
+                temp0 = (~d);
             end
             
             2'd1: begin
-                temp0 = (~6'd51);
-                temp1 = (d ^ internal2);
+                temp0 = (internal2 << 1);
+                temp1 = (d & internal2);
+                temp0 = (internal1 & 6'd17);
             end
             
             2'd2: begin
-                temp0 = (d ? d : 19);
-                temp1 = (6'd37 - 6'd32);
+                temp0 = (~internal1);
             end
             
             2'd3: begin
-                temp0 = (internal2 * 6'd55);
-                temp1 = (c >> 1);
+                temp0 = (6'd35 ? 6'd30 : 3);
+                temp1 = (6'd31 & 6'd57);
+                temp0 = (internal1 | 6'd52);
             end
             
             default: begin
-                temp0 = 6'd17;
+                temp0 = internal0;
             end
         endcase
         
@@ -67,23 +66,23 @@ module complex_datapath_0687(
         case(mode[1:0])
             
             2'd0: begin
-                result_0687 = (~6'd21);
+                result_0687 = (internal0 >> 1);
             end
             
             2'd1: begin
-                result_0687 = (internal0 << 1);
+                result_0687 = (b ^ temp0);
             end
             
             2'd2: begin
-                result_0687 = (c << 1);
+                result_0687 = (6'd31 | internal2);
             end
             
             2'd3: begin
-                result_0687 = (internal0 ^ 6'd45);
+                result_0687 = (a & b);
             end
             
             default: begin
-                result_0687 = b;
+                result_0687 = temp0;
             end
         endcase
     end

@@ -3,57 +3,57 @@ module counter_with_logic_0003(
     input clk,
     input rst_n,
     input enable,
-    input [7:0] data_in,
-    input [2:0] mode,
-    output reg [7:0] result_0003
+    input [11:0] data_in,
+    input [3:0] mode,
+    output reg [11:0] result_0003
 );
 
-    reg [7:0] counter;
-    wire [7:0] intermediate;
+    reg [11:0] counter;
+    wire [11:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 8'd0;
+            counter <= 12'd0;
         else if (enable)
-            counter <= counter + 8'd1;
+            counter <= counter + 12'd1;
     end
     
     // Combinational logic
     
     
-    wire [7:0] stage0 = data_in ^ counter;
+    wire [11:0] stage0 = data_in ^ counter;
     
     
     
-    wire [7:0] stage1 = (data_in << 1);
+    wire [11:0] stage1 = ((counter & 12'd531) | (12'd2922 >> 3));
     
     
     
-    wire [7:0] stage2 = (data_in ? counter : 8);
+    wire [11:0] stage2 = ((12'd3968 - 12'd1049) >> 2);
+    
+    
+    
+    wire [11:0] stage3 = ((counter & stage2) | (12'd1322 ? 12'd199 : 2007));
+    
+    
+    
+    wire [11:0] stage4 = ((12'd3114 ^ counter) >> 3);
     
     
     
     always @(*) begin
         case(mode)
             
-            3'd0: result_0003 = (8'd99 - 8'd61);
+            4'd0: result_0003 = ((stage3 + 12'd2783) >> 2);
             
-            3'd1: result_0003 = (8'd149 << 2);
+            4'd1: result_0003 = (12'd1475 ? 12'd783 : 3836);
             
-            3'd2: result_0003 = (8'd166 * 8'd129);
+            4'd2: result_0003 = ((12'd209 - 12'd3946) ? (stage3 >> 3) : 658);
             
-            3'd3: result_0003 = (8'd192 + stage1);
+            4'd3: result_0003 = (12'd693 - (stage4 ? 12'd611 : 174));
             
-            3'd4: result_0003 = (stage2 >> 2);
-            
-            3'd5: result_0003 = (8'd203 - stage2);
-            
-            3'd6: result_0003 = (8'd191 >> 2);
-            
-            3'd7: result_0003 = (8'd45 + 8'd92);
-            
-            default: result_0003 = stage2;
+            default: result_0003 = stage4;
         endcase
     end
 

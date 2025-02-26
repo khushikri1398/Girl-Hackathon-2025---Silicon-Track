@@ -27,40 +27,37 @@ module complex_datapath_0031(
     always @(*) begin
         // First level operations
         
-        internal0 = 6'd1;
+        internal0 = b;
         
         internal1 = b;
         
-        internal2 = 6'd40;
+        internal2 = d;
         
         
         // Second level operations depending on mode
         case(mode[3:2])
             
             2'd0: begin
-                temp0 = (internal0 | internal1);
-                temp1 = (~internal1);
+                temp0 = (internal1 << 1);
+                temp1 = (a ? 6'd43 : 21);
             end
             
             2'd1: begin
-                temp0 = (internal0 + c);
-                temp1 = (internal0 * 6'd53);
-                temp0 = (6'd31 & internal1);
+                temp0 = (c >> 1);
             end
             
             2'd2: begin
-                temp0 = (6'd41 ? a : 2);
-                temp1 = (a ^ 6'd42);
+                temp0 = (6'd54 & 6'd11);
             end
             
             2'd3: begin
-                temp0 = (internal0 & c);
-                temp1 = (c >> 1);
-                temp0 = (6'd13 >> 1);
+                temp0 = (b * 6'd24);
+                temp1 = (6'd12 | internal1);
+                temp0 = (b | internal0);
             end
             
             default: begin
-                temp0 = c;
+                temp0 = a;
             end
         endcase
         
@@ -68,23 +65,23 @@ module complex_datapath_0031(
         case(mode[1:0])
             
             2'd0: begin
-                result_0031 = (temp0 * 6'd3);
+                result_0031 = (6'd3 >> 1);
             end
             
             2'd1: begin
-                result_0031 = (~d);
+                result_0031 = (~a);
             end
             
             2'd2: begin
-                result_0031 = (c >> 1);
+                result_0031 = (d ? 6'd17 : 39);
             end
             
             2'd3: begin
-                result_0031 = (6'd15 ? internal0 : 29);
+                result_0031 = (a >> 1);
             end
             
             default: begin
-                result_0031 = c;
+                result_0031 = b;
             end
         endcase
     end

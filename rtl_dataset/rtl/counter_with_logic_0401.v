@@ -35,11 +35,11 @@ module counter_with_logic_0401(
             
             2'd0: result_0401 = stage0;
             
-            2'd1: result_0401 = 6'd34;
+            2'd1: result_0401 = 6'd16;
             
-            2'd2: result_0401 = 6'd28;
+            2'd2: result_0401 = 6'd43;
             
-            2'd3: result_0401 = 6'd8;
+            2'd3: result_0401 = 6'd11;
             
             default: result_0401 = stage1;
         endcase

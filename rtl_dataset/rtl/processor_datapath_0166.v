@@ -22,133 +22,133 @@ module processor_datapath_0166(
     always @(*) begin
         case(opcode)
             
-            6'd0: alu_result = ((16'd13966 << 3) >> 1);
+            6'd0: alu_result = (16'd41847 & (16'd41302 ^ alu_b));
             
-            6'd1: alu_result = (16'd23620 - (alu_a << 2));
+            6'd1: alu_result = ((16'd15710 - 16'd55553) * (alu_b ^ alu_b));
             
-            6'd2: alu_result = (16'd29141 * 16'd58965);
+            6'd2: alu_result = (alu_a | (~16'd19956));
             
-            6'd3: alu_result = (alu_b ^ (~16'd22752));
+            6'd3: alu_result = ((~16'd39349) ^ 16'd61883);
             
-            6'd4: alu_result = ((16'd26843 | 16'd42481) >> 4);
+            6'd4: alu_result = ((16'd12969 >> 4) & (16'd18961 & alu_b));
             
-            6'd5: alu_result = ((alu_a ^ alu_b) - (16'd48799 ^ 16'd27152));
+            6'd5: alu_result = ((alu_b | alu_b) ^ (16'd23055 * 16'd50178));
             
-            6'd6: alu_result = (alu_b >> 3);
+            6'd6: alu_result = (16'd15521 >> 3);
             
-            6'd7: alu_result = ((16'd50249 + 16'd5615) - (16'd40389 ? 16'd64666 : 41583));
+            6'd7: alu_result = ((16'd51447 & 16'd10919) ? (~16'd40766) : 34236);
             
-            6'd8: alu_result = (16'd57381 + (16'd39541 ? 16'd20652 : 8832));
+            6'd8: alu_result = ((16'd29339 << 3) - alu_a);
             
-            6'd9: alu_result = (16'd23611 ^ (16'd63788 - 16'd30833));
+            6'd9: alu_result = (alu_b << 3);
             
-            6'd10: alu_result = ((alu_a + alu_b) * (16'd60992 + 16'd50851));
+            6'd10: alu_result = ((~16'd64963) + (16'd60966 ? 16'd5282 : 30872));
             
-            6'd11: alu_result = ((16'd31379 ^ alu_b) ? (16'd9966 ? 16'd36442 : 3630) : 55354);
+            6'd11: alu_result = ((16'd50154 ^ 16'd40345) ^ (16'd60521 * 16'd29434));
             
-            6'd12: alu_result = (16'd60464 - (16'd62035 - alu_a));
+            6'd12: alu_result = ((16'd46157 >> 3) * alu_a);
             
-            6'd13: alu_result = ((16'd49230 ^ 16'd60408) ? 16'd3615 : 46309);
+            6'd13: alu_result = ((16'd49131 >> 1) >> 3);
             
-            6'd14: alu_result = (alu_a + (16'd62863 & 16'd46106));
+            6'd14: alu_result = ((16'd8026 & 16'd50302) & (~16'd16678));
             
-            6'd15: alu_result = ((alu_b & 16'd8789) ? (16'd20555 + alu_b) : 36406);
+            6'd15: alu_result = ((alu_a & alu_b) ? alu_a : 11583);
             
-            6'd16: alu_result = ((16'd35846 + 16'd3167) * (16'd29648 << 4));
+            6'd16: alu_result = (~(16'd2167 << 4));
             
-            6'd17: alu_result = ((16'd33817 & 16'd65261) | 16'd51843);
+            6'd17: alu_result = ((alu_b >> 4) * (16'd50302 ^ 16'd10109));
             
-            6'd18: alu_result = ((16'd37244 - 16'd41316) * (16'd9627 - alu_b));
+            6'd18: alu_result = ((16'd29478 | 16'd11245) + (16'd62776 - alu_b));
             
-            6'd19: alu_result = ((16'd51954 ^ alu_a) + (alu_a << 4));
+            6'd19: alu_result = ((alu_b - alu_a) ? (16'd19210 - alu_b) : 1109);
             
-            6'd20: alu_result = ((16'd31612 - 16'd9160) | (alu_a >> 3));
+            6'd20: alu_result = ((16'd30974 << 2) & (16'd64540 | alu_a));
             
-            6'd21: alu_result = ((alu_a + 16'd55580) - (16'd40150 - alu_b));
+            6'd21: alu_result = (~alu_a);
             
-            6'd22: alu_result = ((alu_a - alu_b) ? (alu_a + alu_b) : 22517);
+            6'd22: alu_result = ((16'd35962 >> 4) >> 1);
             
-            6'd23: alu_result = ((16'd61971 ? 16'd17874 : 42460) << 1);
+            6'd23: alu_result = ((16'd30639 & 16'd40098) >> 2);
             
-            6'd24: alu_result = ((alu_b & 16'd65188) << 2);
+            6'd24: alu_result = (alu_a * 16'd27221);
             
-            6'd25: alu_result = ((16'd52857 | alu_b) * alu_a);
+            6'd25: alu_result = (~16'd48741);
             
-            6'd26: alu_result = ((16'd32518 ? 16'd43330 : 52169) + (alu_b << 1));
+            6'd26: alu_result = (~(16'd15670 * 16'd9788));
             
-            6'd27: alu_result = ((alu_b * 16'd14873) * 16'd20944);
+            6'd27: alu_result = ((alu_b >> 3) ^ (alu_b >> 1));
             
-            6'd28: alu_result = (16'd30850 * (alu_a ^ 16'd49750));
+            6'd28: alu_result = ((alu_a << 2) | (~alu_a));
             
-            6'd29: alu_result = ((16'd58538 - 16'd44313) + (alu_b >> 1));
+            6'd29: alu_result = ((~16'd32151) << 4);
             
-            6'd30: alu_result = (16'd17729 << 1);
+            6'd30: alu_result = ((~16'd56204) << 3);
             
-            6'd31: alu_result = ((alu_a >> 4) + (alu_a * 16'd20341));
+            6'd31: alu_result = ((~16'd20799) << 4);
             
-            6'd32: alu_result = ((16'd55173 | 16'd5937) | (16'd23122 & 16'd43197));
+            6'd32: alu_result = (16'd17006 * (alu_a << 4));
             
-            6'd33: alu_result = (~(alu_a * 16'd9237));
+            6'd33: alu_result = ((16'd55429 - 16'd53596) - (alu_a ? 16'd12046 : 56388));
             
-            6'd34: alu_result = ((alu_a + alu_b) & (~alu_a));
+            6'd34: alu_result = (16'd17775 ^ (~alu_b));
             
-            6'd35: alu_result = (alu_a << 3);
+            6'd35: alu_result = ((16'd62401 ? 16'd3997 : 36608) ^ (16'd14027 + alu_b));
             
-            6'd36: alu_result = ((16'd33055 >> 4) ^ alu_b);
+            6'd36: alu_result = (alu_a - (alu_a ^ 16'd20234));
             
-            6'd37: alu_result = (alu_a - alu_a);
+            6'd37: alu_result = (16'd46073 ^ (alu_a ^ 16'd33215));
             
-            6'd38: alu_result = ((alu_b ^ alu_b) * (16'd9586 ^ alu_a));
+            6'd38: alu_result = ((alu_a & alu_a) - 16'd45167);
             
-            6'd39: alu_result = (~(16'd41051 & 16'd54233));
+            6'd39: alu_result = (16'd49624 * 16'd54665);
             
-            6'd40: alu_result = ((16'd58167 | 16'd40289) - (alu_a * 16'd20130));
+            6'd40: alu_result = ((alu_b | alu_b) - 16'd2499);
             
-            6'd41: alu_result = ((16'd63458 >> 3) - (alu_b + 16'd60333));
+            6'd41: alu_result = ((alu_b ? 16'd21092 : 42816) ? (16'd36608 & alu_a) : 4419);
             
-            6'd42: alu_result = (~16'd47611);
+            6'd42: alu_result = ((~alu_b) >> 4);
             
-            6'd43: alu_result = (~(~16'd17538));
+            6'd43: alu_result = ((alu_b << 2) | (16'd51964 | 16'd51896));
             
-            6'd44: alu_result = (16'd41453 ^ (alu_b | alu_b));
+            6'd44: alu_result = ((alu_b | alu_b) << 2);
             
-            6'd45: alu_result = ((alu_a | 16'd16086) * (16'd41353 | 16'd61258));
+            6'd45: alu_result = ((16'd54802 * 16'd5042) - 16'd52173);
             
-            6'd46: alu_result = (~(alu_a & 16'd38427));
+            6'd46: alu_result = (16'd48510 ? (alu_b & 16'd24654) : 31660);
             
-            6'd47: alu_result = ((16'd12859 ? alu_b : 32801) & alu_b);
+            6'd47: alu_result = ((alu_b ^ 16'd48250) ? (16'd53124 ^ alu_a) : 47003);
             
-            6'd48: alu_result = ((16'd48115 ^ 16'd21681) << 3);
+            6'd48: alu_result = (16'd54738 | (16'd35854 | 16'd25050));
             
-            6'd49: alu_result = (16'd56740 ? (alu_b ? alu_a : 39170) : 50596);
+            6'd49: alu_result = (alu_a + (16'd57222 & 16'd7318));
             
-            6'd50: alu_result = ((16'd14538 - 16'd27083) & (16'd1078 + 16'd60669));
+            6'd50: alu_result = ((alu_a ^ 16'd9958) * (alu_a * alu_b));
             
-            6'd51: alu_result = ((16'd59607 >> 2) | (16'd23129 & 16'd65186));
+            6'd51: alu_result = ((~16'd41925) | (alu_a - 16'd452));
             
-            6'd52: alu_result = ((16'd63072 ? alu_b : 44261) << 2);
+            6'd52: alu_result = ((16'd22914 - 16'd43075) ^ (16'd37310 | 16'd8421));
             
-            6'd53: alu_result = (alu_a * (alu_a & 16'd32600));
+            6'd53: alu_result = ((16'd23419 ? 16'd21743 : 37490) * (16'd29922 + alu_a));
             
-            6'd54: alu_result = ((16'd23128 ^ alu_a) << 1);
+            6'd54: alu_result = (16'd41356 & (~alu_b));
             
-            6'd55: alu_result = (~(16'd43464 - alu_a));
+            6'd55: alu_result = (16'd24834 - (alu_a * alu_b));
             
-            6'd56: alu_result = ((alu_a ? 16'd50588 : 47961) ^ (16'd46741 + 16'd60482));
+            6'd56: alu_result = ((16'd52674 - 16'd44309) & alu_b);
             
-            6'd57: alu_result = ((16'd57622 & alu_a) << 4);
+            6'd57: alu_result = ((alu_b | alu_a) >> 2);
             
-            6'd58: alu_result = ((16'd57949 << 4) - (alu_a | 16'd50684));
+            6'd58: alu_result = ((16'd35905 & 16'd58125) - (alu_a ? 16'd12705 : 47770));
             
-            6'd59: alu_result = ((16'd14113 >> 2) ? (16'd8374 + 16'd30070) : 33819);
+            6'd59: alu_result = ((16'd39846 | alu_b) ^ (16'd55778 + 16'd19980));
             
-            6'd60: alu_result = ((16'd18841 ^ 16'd13946) << 1);
+            6'd60: alu_result = (alu_a << 3);
             
-            6'd61: alu_result = ((~16'd29026) & (16'd46995 << 4));
+            6'd61: alu_result = ((16'd48148 * 16'd19720) >> 2);
             
-            6'd62: alu_result = (alu_b & (16'd29625 - 16'd29547));
+            6'd62: alu_result = (16'd34774 + (~16'd29123));
             
-            6'd63: alu_result = ((16'd4103 * 16'd47701) * 16'd3150);
+            6'd63: alu_result = ((16'd25758 + 16'd6342) & (alu_b ? 16'd19018 : 6736));
             
             default: alu_result = alu_a;
         endcase

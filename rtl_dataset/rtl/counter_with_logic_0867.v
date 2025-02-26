@@ -26,20 +26,20 @@ module counter_with_logic_0867(
     
     
     
-    wire [5:0] stage1 = 6'd37;
+    wire [5:0] stage1 = 6'd16;
     
     
     
     always @(*) begin
         case(mode)
             
-            2'd0: result_0867 = 6'd53;
+            2'd0: result_0867 = 6'd62;
             
-            2'd1: result_0867 = 6'd0;
+            2'd1: result_0867 = stage0;
             
-            2'd2: result_0867 = 6'd14;
+            2'd2: result_0867 = stage1;
             
-            2'd3: result_0867 = stage0;
+            2'd3: result_0867 = stage1;
             
             default: result_0867 = stage1;
         endcase

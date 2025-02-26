@@ -26,46 +26,44 @@ module counter_with_logic_0419(
     
     
     
-    wire [13:0] stage1 = ((stage0 | stage0) ? data_in : 2364);
+    wire [13:0] stage1 = (~14'd2480);
     
     
     
-    wire [13:0] stage2 = (~(data_in >> 1));
+    wire [13:0] stage2 = ((14'd7831 * stage0) & (stage0 & 14'd5396));
     
     
     
-    wire [13:0] stage3 = ((14'd936 & stage0) ? (14'd4624 & counter) : 12724);
+    wire [13:0] stage3 = (14'd2684 | (stage0 ? stage1 : 4689));
     
     
     
-    wire [13:0] stage4 = ((data_in + 14'd14668) | (stage1 ? stage1 : 7842));
+    wire [13:0] stage4 = ((14'd434 + stage0) ^ data_in);
     
     
     
-    wire [13:0] stage5 = (~(~stage0));
+    wire [13:0] stage5 = ((~stage2) - (stage0 & 14'd10543));
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0419 = (14'd5161 << 1);
+            4'd0: result_0419 = ((~14'd10319) >> 1);
             
-            4'd1: result_0419 = ((14'd15512 << 1) - (14'd3794 - 14'd12820));
+            4'd1: result_0419 = ((stage0 & 14'd624) << 2);
             
-            4'd2: result_0419 = (14'd11227 | (~14'd12337));
+            4'd2: result_0419 = ((14'd8801 ? 14'd6140 : 15572) << 1);
             
-            4'd3: result_0419 = (~(14'd7593 | 14'd1218));
+            4'd3: result_0419 = (stage3 + (14'd5566 * 14'd4411));
             
-            4'd4: result_0419 = ((14'd3968 << 3) >> 2);
+            4'd4: result_0419 = ((14'd14499 ? 14'd12082 : 1861) * (14'd8736 << 1));
             
-            4'd5: result_0419 = ((14'd13309 * 14'd5654) >> 3);
+            4'd5: result_0419 = ((14'd16305 | stage3) | (14'd9958 * 14'd1936));
             
-            4'd6: result_0419 = (~(~14'd4683));
+            4'd6: result_0419 = ((14'd2376 >> 1) + 14'd631);
             
-            4'd7: result_0419 = ((14'd3943 & 14'd10082) + (~14'd3880));
-            
-            4'd8: result_0419 = (~(14'd7417 + stage3));
+            4'd7: result_0419 = ((14'd1534 << 1) ^ 14'd10729);
             
             default: result_0419 = stage5;
         endcase

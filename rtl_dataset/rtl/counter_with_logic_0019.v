@@ -3,57 +3,57 @@ module counter_with_logic_0019(
     input clk,
     input rst_n,
     input enable,
-    input [11:0] data_in,
-    input [3:0] mode,
-    output reg [11:0] result_0019
+    input [9:0] data_in,
+    input [2:0] mode,
+    output reg [9:0] result_0019
 );
 
-    reg [11:0] counter;
-    wire [11:0] intermediate;
+    reg [9:0] counter;
+    wire [9:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 12'd0;
+            counter <= 10'd0;
         else if (enable)
-            counter <= counter + 12'd1;
+            counter <= counter + 10'd1;
     end
     
     // Combinational logic
     
     
-    wire [11:0] stage0 = data_in ^ counter;
+    wire [9:0] stage0 = data_in ^ counter;
     
     
     
-    wire [11:0] stage1 = ((~12'd2292) - (~12'd2926));
+    wire [9:0] stage1 = (~10'd184);
     
     
     
-    wire [11:0] stage2 = (12'd661 + 12'd30);
+    wire [9:0] stage2 = (10'd819 >> 2);
     
     
     
-    wire [11:0] stage3 = ((counter | data_in) ^ (stage0 ? stage2 : 209));
-    
-    
-    
-    wire [11:0] stage4 = (~(12'd1496 & counter));
+    wire [9:0] stage3 = (~data_in);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0019 = ((12'd2054 >> 3) * stage2);
+            3'd0: result_0019 = (10'd461 ? stage0 : 463);
             
-            4'd1: result_0019 = ((12'd3382 - 12'd3793) * (~12'd1421));
+            3'd1: result_0019 = (10'd482 >> 2);
             
-            4'd2: result_0019 = (~(12'd1243 & 12'd425));
+            3'd2: result_0019 = (stage2 & 10'd533);
             
-            4'd3: result_0019 = (stage2 & (12'd2173 ^ 12'd90));
+            3'd3: result_0019 = (10'd794 | stage3);
             
-            default: result_0019 = stage4;
+            3'd4: result_0019 = (10'd523 | 10'd289);
+            
+            3'd5: result_0019 = (10'd663 - 10'd532);
+            
+            default: result_0019 = stage3;
         endcase
     end
 

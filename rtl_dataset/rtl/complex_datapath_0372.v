@@ -2,123 +2,87 @@
 module complex_datapath_0372(
     input clk,
     input rst_n,
-    input [7:0] a, b, c, d,
-    input [5:0] mode,
-    output reg [7:0] result_0372
+    input [5:0] a, b, c, d,
+    input [3:0] mode,
+    output reg [5:0] result_0372
 );
 
     // Internal signals
     
-    reg [7:0] internal0;
+    reg [5:0] internal0;
     
-    reg [7:0] internal1;
+    reg [5:0] internal1;
     
-    reg [7:0] internal2;
-    
-    reg [7:0] internal3;
+    reg [5:0] internal2;
     
     
     // Temporary signals for complex operations
     
-    reg [7:0] temp0;
+    reg [5:0] temp0;
     
-    reg [7:0] temp1;
-    
-    reg [7:0] temp2;
+    reg [5:0] temp1;
     
     
     // Combinational logic
     always @(*) begin
         // First level operations
         
-        internal0 = (8'd210 << 2);
+        internal0 = c;
         
-        internal1 = (8'd192 << 2);
+        internal1 = c;
         
-        internal2 = (d | b);
-        
-        internal3 = (8'd96 >> 1);
+        internal2 = 6'd30;
         
         
         // Second level operations depending on mode
-        case(mode[5:3])
+        case(mode[3:2])
             
-            3'd0: begin
-                temp0 = ((internal0 ? internal2 : 190) * (8'd177 * c));
+            2'd0: begin
+                temp0 = (internal1 >> 1);
             end
             
-            3'd1: begin
-                temp0 = ((8'd129 ? internal1 : 208) | (internal0 - a));
+            2'd1: begin
+                temp0 = (~internal2);
             end
             
-            3'd2: begin
-                temp0 = ((internal2 & c) & (8'd93 & b));
-                temp1 = (~internal3);
+            2'd2: begin
+                temp0 = (a >> 1);
+                temp1 = (c ? internal2 : 3);
+                temp0 = (6'd21 + 6'd13);
             end
             
-            3'd3: begin
-                temp0 = ((~a) ^ internal3);
-            end
-            
-            3'd4: begin
-                temp0 = ((~b) & (a ? internal2 : 149));
-            end
-            
-            3'd5: begin
-                temp0 = ((d - 8'd72) >> 2);
-            end
-            
-            3'd6: begin
-                temp0 = (~8'd56);
-                temp1 = (c * (b ^ c));
-            end
-            
-            3'd7: begin
-                temp0 = (internal1 ? (~c) : 125);
+            2'd3: begin
+                temp0 = (internal2 ^ c);
+                temp1 = (a ? 6'd32 : 20);
+                temp0 = (internal1 ? 6'd19 : 16);
             end
             
             default: begin
-                temp0 = (~temp1);
+                temp0 = temp1;
             end
         endcase
         
         // Final operations depending on mode
-        case(mode[2:0])
+        case(mode[1:0])
             
-            3'd0: begin
-                result_0372 = ((b << 2) ^ (8'd169 | internal1));
+            2'd0: begin
+                result_0372 = (temp1 | 6'd63);
             end
             
-            3'd1: begin
-                result_0372 = (~(8'd226 << 1));
+            2'd1: begin
+                result_0372 = (internal1 | temp0);
             end
             
-            3'd2: begin
-                result_0372 = ((b ^ temp0) + (internal0 ^ internal0));
+            2'd2: begin
+                result_0372 = (internal0 * 6'd38);
             end
             
-            3'd3: begin
-                result_0372 = (c + (~internal2));
-            end
-            
-            3'd4: begin
-                result_0372 = (a & (internal1 ? internal3 : 169));
-            end
-            
-            3'd5: begin
-                result_0372 = (temp0 << 1);
-            end
-            
-            3'd6: begin
-                result_0372 = ((8'd199 * 8'd164) ? (8'd225 ^ c) : 178);
-            end
-            
-            3'd7: begin
-                result_0372 = ((temp0 * temp2) * internal3);
+            2'd3: begin
+                result_0372 = (temp1 | 6'd21);
             end
             
             default: begin
-                result_0372 = (8'd157 + internal1);
+                result_0372 = 6'd40;
             end
         endcase
     end

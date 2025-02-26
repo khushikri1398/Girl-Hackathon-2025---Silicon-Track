@@ -3,57 +3,65 @@ module counter_with_logic_0922(
     input clk,
     input rst_n,
     input enable,
-    input [7:0] data_in,
-    input [2:0] mode,
-    output reg [7:0] result_0922
+    input [13:0] data_in,
+    input [3:0] mode,
+    output reg [13:0] result_0922
 );
 
-    reg [7:0] counter;
-    wire [7:0] intermediate;
+    reg [13:0] counter;
+    wire [13:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 8'd0;
+            counter <= 14'd0;
         else if (enable)
-            counter <= counter + 8'd1;
+            counter <= counter + 14'd1;
     end
     
     // Combinational logic
     
     
-    wire [7:0] stage0 = data_in ^ counter;
+    wire [13:0] stage0 = data_in ^ counter;
     
     
     
-    wire [7:0] stage1 = (~8'd0);
+    wire [13:0] stage1 = (14'd11079 * 14'd4667);
     
     
     
-    wire [7:0] stage2 = (8'd251 - 8'd244);
+    wire [13:0] stage2 = ((14'd10841 ^ 14'd2714) + (14'd13157 | stage0));
+    
+    
+    
+    wire [13:0] stage3 = (stage0 * 14'd2306);
+    
+    
+    
+    wire [13:0] stage4 = ((data_in | 14'd8622) << 3);
+    
+    
+    
+    wire [13:0] stage5 = (~14'd16078);
     
     
     
     always @(*) begin
         case(mode)
             
-            3'd0: result_0922 = (8'd153 >> 1);
+            4'd0: result_0922 = (14'd9791 >> 1);
             
-            3'd1: result_0922 = (8'd99 | 8'd18);
+            4'd1: result_0922 = ((14'd15725 * 14'd909) + (~stage0));
             
-            3'd2: result_0922 = (stage2 - 8'd231);
+            4'd2: result_0922 = (14'd2179 << 2);
             
-            3'd3: result_0922 = (8'd77 << 2);
+            4'd3: result_0922 = ((stage2 >> 3) ? (14'd10810 * 14'd5178) : 4372);
             
-            3'd4: result_0922 = (stage1 - 8'd136);
+            4'd4: result_0922 = (~14'd1171);
             
-            3'd5: result_0922 = (8'd117 * stage2);
+            4'd5: result_0922 = ((14'd2806 | stage5) * (14'd10096 ? 14'd7264 : 9190));
             
-            3'd6: result_0922 = (8'd152 & 8'd107);
-            
-            3'd7: result_0922 = (8'd26 >> 2);
-            
-            default: result_0922 = stage2;
+            default: result_0922 = stage5;
         endcase
     end
 

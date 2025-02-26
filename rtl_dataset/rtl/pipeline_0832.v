@@ -25,19 +25,19 @@ module pipeline_0832(
     // Combinational logic for each stage
     
     
-    assign stage0_next = (8'd123 ? control : 147);
+    assign stage0_next = (control - 8'd8);
     
     
     
-    assign stage1_next = (control | control);
+    assign stage1_next = (~stage0_reg);
     
     
     
-    assign stage2_next = (8'd3 & 8'd242);
+    assign stage2_next = (stage1_reg ^ 8'd236);
     
     
     
-    assign stage3_next = (8'd115 - 8'd170);
+    assign stage3_next = (8'd253 << 1);
     
     
     

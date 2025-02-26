@@ -22,25 +22,25 @@ module processor_datapath_0656(
     always @(*) begin
         case(opcode)
             
-            7'd0: alu_result = ((alu_b ? (~20'd163670) : 25424) | ((alu_b ^ alu_a) >> 3));
+            7'd0: alu_result = (((alu_b + 20'd409602) ? (20'd56949 ? 20'd485119 : 196381) : 952891) - (alu_b | alu_a));
             
-            7'd1: alu_result = (alu_a & ((alu_b * alu_b) - (20'd791188 << 5)));
+            7'd1: alu_result = (((alu_b >> 5) << 5) ? alu_a : 201613);
             
-            7'd2: alu_result = ((20'd276793 ? (20'd375180 * 20'd964116) : 102548) - (20'd556244 | (alu_a & alu_b)));
+            7'd2: alu_result = ((~(20'd204350 & 20'd625312)) ? 20'd298793 : 943963);
             
-            7'd3: alu_result = (((alu_b * alu_b) >> 5) & (~(20'd371220 + 20'd900710)));
+            7'd3: alu_result = (((alu_a - 20'd360235) ? (alu_b * alu_b) : 459964) ? ((alu_a & 20'd740667) >> 2) : 79431);
             
-            7'd4: alu_result = ((~(alu_b + 20'd855274)) + (20'd6188 >> 4));
+            7'd4: alu_result = (((20'd626751 << 3) ? 20'd621168 : 533604) - (alu_b - 20'd276026));
             
-            7'd5: alu_result = (((alu_a << 3) | (20'd822528 << 4)) & ((alu_b & alu_b) * (20'd924374 >> 2)));
+            7'd5: alu_result = (((20'd747856 >> 2) | alu_b) - ((alu_a + 20'd439131) << 1));
             
-            7'd6: alu_result = (alu_a ^ ((alu_a >> 1) >> 3));
+            7'd6: alu_result = ((~20'd501672) - alu_b);
             
-            7'd7: alu_result = (alu_b * ((20'd250447 - alu_b) - 20'd972250));
+            7'd7: alu_result = (((20'd679112 >> 1) ^ alu_b) | ((20'd853826 * 20'd16744) ? (20'd68502 ? 20'd297556 : 680070) : 359817));
             
-            7'd8: alu_result = (((20'd39197 >> 5) << 5) & 20'd218412);
+            7'd8: alu_result = (((20'd719589 - alu_b) ? (20'd271298 + 20'd262565) : 100287) + (20'd797466 ? alu_a : 780277));
             
-            7'd9: alu_result = (((20'd24800 ? 20'd747057 : 926735) + alu_a) ? 20'd1013817 : 500661);
+            7'd9: alu_result = (20'd394930 + 20'd400990);
             
             default: alu_result = alu_a;
         endcase

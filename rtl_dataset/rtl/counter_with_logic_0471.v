@@ -3,59 +3,57 @@ module counter_with_logic_0471(
     input clk,
     input rst_n,
     input enable,
-    input [11:0] data_in,
-    input [3:0] mode,
-    output reg [11:0] result_0471
+    input [7:0] data_in,
+    input [2:0] mode,
+    output reg [7:0] result_0471
 );
 
-    reg [11:0] counter;
-    wire [11:0] intermediate;
+    reg [7:0] counter;
+    wire [7:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 12'd0;
+            counter <= 8'd0;
         else if (enable)
-            counter <= counter + 12'd1;
+            counter <= counter + 8'd1;
     end
     
     // Combinational logic
     
     
-    wire [11:0] stage0 = data_in ^ counter;
+    wire [7:0] stage0 = data_in ^ counter;
     
     
     
-    wire [11:0] stage1 = (counter | 12'd77);
+    wire [7:0] stage1 = (stage0 | 8'd101);
     
     
     
-    wire [11:0] stage2 = ((12'd617 * stage0) - (stage1 | 12'd524));
-    
-    
-    
-    wire [11:0] stage3 = (stage2 | stage2);
-    
-    
-    
-    wire [11:0] stage4 = ((stage2 ^ stage2) - (12'd3749 | data_in));
+    wire [7:0] stage2 = (data_in << 1);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0471 = (~12'd1992);
+            3'd0: result_0471 = (8'd14 & 8'd235);
             
-            4'd1: result_0471 = ((12'd3338 >> 2) * (12'd2871 * 12'd1347));
+            3'd1: result_0471 = (8'd88 | 8'd216);
             
-            4'd2: result_0471 = ((~stage4) * (~12'd797));
+            3'd2: result_0471 = (8'd230 & stage1);
             
-            4'd3: result_0471 = ((12'd122 >> 1) << 2);
+            3'd3: result_0471 = (8'd25 << 1);
             
-            4'd4: result_0471 = (stage0 | (12'd2247 << 2));
+            3'd4: result_0471 = (8'd107 | 8'd174);
             
-            default: result_0471 = stage4;
+            3'd5: result_0471 = (8'd31 * 8'd144);
+            
+            3'd6: result_0471 = (8'd2 ? 8'd192 : 130);
+            
+            3'd7: result_0471 = (~8'd237);
+            
+            default: result_0471 = stage2;
         endcase
     end
 

@@ -34,31 +34,31 @@ module pipeline_0351(
     // Combinational logic for each stage
     
     
-    assign stage0_next = (data_in >> 2);
+    assign stage0_next = ((~control) >> 2);
     
     
     
-    assign stage1_next = ((14'd4419 << 2) + control);
+    assign stage1_next = ((14'd873 & 14'd9897) ^ (stage0_reg | 14'd9428));
     
     
     
-    assign stage2_next = ((14'd13216 >> 2) << 3);
+    assign stage2_next = (~(14'd5464 * 14'd660));
     
     
     
-    assign stage3_next = ((14'd4747 ? control : 13460) & (14'd14691 | 14'd11137));
+    assign stage3_next = ((control << 1) & (~14'd9728));
     
     
     
-    assign stage4_next = (~(14'd8415 << 1));
+    assign stage4_next = ((14'd10613 >> 1) ? (~14'd328) : 8205);
     
     
     
-    assign stage5_next = (stage4_reg >> 1);
+    assign stage5_next = ((14'd14320 & control) + control);
     
     
     
-    assign stage6_next = (~(control ? control : 1377));
+    assign stage6_next = ((control >> 3) * (control & control));
     
     
     

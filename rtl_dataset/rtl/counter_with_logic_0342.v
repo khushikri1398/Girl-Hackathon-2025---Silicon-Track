@@ -26,20 +26,20 @@ module counter_with_logic_0342(
     
     
     
-    wire [5:0] stage1 = data_in;
+    wire [5:0] stage1 = stage0;
     
     
     
     always @(*) begin
         case(mode)
             
-            2'd0: result_0342 = 6'd12;
+            2'd0: result_0342 = 6'd36;
             
-            2'd1: result_0342 = 6'd0;
+            2'd1: result_0342 = 6'd6;
             
-            2'd2: result_0342 = 6'd60;
+            2'd2: result_0342 = 6'd26;
             
-            2'd3: result_0342 = 6'd19;
+            2'd3: result_0342 = 6'd17;
             
             default: result_0342 = stage1;
         endcase

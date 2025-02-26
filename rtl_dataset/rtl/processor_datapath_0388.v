@@ -2,49 +2,89 @@
 module processor_datapath_0388(
     input clk,
     input rst_n,
-    input [31:0] instruction,
-    input [23:0] operand_a, operand_b,
-    output reg [23:0] result_0388
+    input [19:0] instruction,
+    input [11:0] operand_a, operand_b,
+    output reg [11:0] result_0388
 );
 
     // Decode instruction
-    wire [7:0] opcode = instruction[31:24];
-    wire [7:0] addr = instruction[7:0];
+    wire [4:0] opcode = instruction[19:15];
+    wire [4:0] addr = instruction[4:0];
     
     // Register file
-    reg [23:0] registers [15:0];
+    reg [11:0] registers [31:0];
     
     // ALU inputs
-    reg [23:0] alu_a, alu_b;
-    wire [23:0] alu_result;
+    reg [11:0] alu_a, alu_b;
+    wire [11:0] alu_result;
     
     // ALU operation
     always @(*) begin
         case(opcode)
             
-            8'd0: alu_result = (alu_b << 2);
+            5'd0: alu_result = (~12'd152);
             
-            8'd1: alu_result = ((((~alu_a) >> 5) >> 3) & (((alu_a | 24'd9681827) ^ alu_b) >> 3));
+            5'd1: alu_result = (12'd1483 - 12'd2222);
             
-            8'd2: alu_result = (~(((24'd16056240 * 24'd549628) & (alu_b ? 24'd2753794 : 3093021)) & 24'd11679887));
+            5'd2: alu_result = (12'd3145 | alu_b);
             
-            8'd3: alu_result = (24'd14883259 * (((~24'd12157236) * 24'd8626837) & (~24'd13460998)));
+            5'd3: alu_result = (12'd1539 - alu_b);
             
-            8'd4: alu_result = ((((24'd4703365 + alu_b) * (24'd9540655 * alu_a)) << 5) & (((alu_a << 4) ^ (24'd15216590 - alu_b)) ? (24'd11176930 >> 2) : 12984407));
+            5'd4: alu_result = (12'd1904 | alu_a);
             
-            8'd5: alu_result = ((((24'd2568082 ^ alu_a) ? (alu_b + 24'd14574700) : 9124966) * (alu_b ? (24'd14990648 ? alu_a : 8471163) : 9262931)) ^ 24'd9411911);
+            5'd5: alu_result = (12'd0 >> 1);
             
-            8'd6: alu_result = ((24'd10983284 * alu_b) & 24'd9684055);
+            5'd6: alu_result = (12'd3104 & 12'd2962);
             
-            8'd7: alu_result = (~(alu_b | ((24'd14761029 >> 5) + (24'd15969574 * alu_a))));
+            5'd7: alu_result = (12'd1169 * alu_a);
             
-            8'd8: alu_result = (((24'd11195264 >> 3) + alu_b) + 24'd12108543);
+            5'd8: alu_result = (12'd2478 << 3);
             
-            8'd9: alu_result = (24'd12772658 ? (alu_b * ((24'd16294700 | 24'd12208736) >> 1)) : 910901);
+            5'd9: alu_result = (alu_b & 12'd3806);
             
-            8'd10: alu_result = ((((alu_b ^ 24'd10471920) ? (alu_b * alu_a) : 4400295) | (24'd9385800 << 3)) >> 5);
+            5'd10: alu_result = (12'd1399 * 12'd429);
             
-            8'd11: alu_result = (alu_b - ((24'd2468515 | 24'd6316401) ^ ((24'd11684633 * alu_b) * (alu_a + 24'd7559365))));
+            5'd11: alu_result = (~12'd3260);
+            
+            5'd12: alu_result = (~alu_a);
+            
+            5'd13: alu_result = (12'd2928 & alu_b);
+            
+            5'd14: alu_result = (12'd2070 + alu_a);
+            
+            5'd15: alu_result = (alu_a ? 12'd136 : 3540);
+            
+            5'd16: alu_result = (12'd2254 ? 12'd286 : 1224);
+            
+            5'd17: alu_result = (alu_a << 1);
+            
+            5'd18: alu_result = (12'd1117 - 12'd981);
+            
+            5'd19: alu_result = (12'd185 ? 12'd2076 : 1239);
+            
+            5'd20: alu_result = (12'd4091 * 12'd2282);
+            
+            5'd21: alu_result = (~12'd3071);
+            
+            5'd22: alu_result = (alu_b + 12'd3841);
+            
+            5'd23: alu_result = (12'd2810 & alu_b);
+            
+            5'd24: alu_result = (alu_a ? 12'd1856 : 1651);
+            
+            5'd25: alu_result = (~12'd3298);
+            
+            5'd26: alu_result = (12'd2741 >> 2);
+            
+            5'd27: alu_result = (12'd494 * alu_a);
+            
+            5'd28: alu_result = (alu_a << 1);
+            
+            5'd29: alu_result = (12'd3233 ^ 12'd1799);
+            
+            5'd30: alu_result = (alu_a + 12'd4017);
+            
+            5'd31: alu_result = (alu_b * 12'd2309);
             
             default: alu_result = alu_a;
         endcase
@@ -57,12 +97,12 @@ module processor_datapath_0388(
         alu_b = operand_b;
         
         // Source selection based on instruction bits
-        if (instruction[9]) begin
-            alu_a = registers[instruction[7:4]];
+        if (instruction[6]) begin
+            alu_a = registers[instruction[4:2]];
         end
         
-        if (instruction[8]) begin
-            alu_b = registers[instruction[3:0]];
+        if (instruction[5]) begin
+            alu_b = registers[instruction[1:0]];
         end
         
         // Result signal assignment
@@ -73,39 +113,71 @@ module processor_datapath_0388(
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             
-            registers[0] <= 24'd0;
+            registers[0] <= 12'd0;
             
-            registers[1] <= 24'd0;
+            registers[1] <= 12'd0;
             
-            registers[2] <= 24'd0;
+            registers[2] <= 12'd0;
             
-            registers[3] <= 24'd0;
+            registers[3] <= 12'd0;
             
-            registers[4] <= 24'd0;
+            registers[4] <= 12'd0;
             
-            registers[5] <= 24'd0;
+            registers[5] <= 12'd0;
             
-            registers[6] <= 24'd0;
+            registers[6] <= 12'd0;
             
-            registers[7] <= 24'd0;
+            registers[7] <= 12'd0;
             
-            registers[8] <= 24'd0;
+            registers[8] <= 12'd0;
             
-            registers[9] <= 24'd0;
+            registers[9] <= 12'd0;
             
-            registers[10] <= 24'd0;
+            registers[10] <= 12'd0;
             
-            registers[11] <= 24'd0;
+            registers[11] <= 12'd0;
             
-            registers[12] <= 24'd0;
+            registers[12] <= 12'd0;
             
-            registers[13] <= 24'd0;
+            registers[13] <= 12'd0;
             
-            registers[14] <= 24'd0;
+            registers[14] <= 12'd0;
             
-            registers[15] <= 24'd0;
+            registers[15] <= 12'd0;
             
-        end else if (instruction[23]) begin
+            registers[16] <= 12'd0;
+            
+            registers[17] <= 12'd0;
+            
+            registers[18] <= 12'd0;
+            
+            registers[19] <= 12'd0;
+            
+            registers[20] <= 12'd0;
+            
+            registers[21] <= 12'd0;
+            
+            registers[22] <= 12'd0;
+            
+            registers[23] <= 12'd0;
+            
+            registers[24] <= 12'd0;
+            
+            registers[25] <= 12'd0;
+            
+            registers[26] <= 12'd0;
+            
+            registers[27] <= 12'd0;
+            
+            registers[28] <= 12'd0;
+            
+            registers[29] <= 12'd0;
+            
+            registers[30] <= 12'd0;
+            
+            registers[31] <= 12'd0;
+            
+        end else if (instruction[14]) begin
             registers[addr] <= alu_result;
         end
     end

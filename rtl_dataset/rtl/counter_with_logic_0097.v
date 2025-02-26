@@ -3,59 +3,57 @@ module counter_with_logic_0097(
     input clk,
     input rst_n,
     input enable,
-    input [13:0] data_in,
-    input [3:0] mode,
-    output reg [13:0] result_0097
+    input [9:0] data_in,
+    input [2:0] mode,
+    output reg [9:0] result_0097
 );
 
-    reg [13:0] counter;
-    wire [13:0] intermediate;
+    reg [9:0] counter;
+    wire [9:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 14'd0;
+            counter <= 10'd0;
         else if (enable)
-            counter <= counter + 14'd1;
+            counter <= counter + 10'd1;
     end
     
     // Combinational logic
     
     
-    wire [13:0] stage0 = data_in ^ counter;
+    wire [9:0] stage0 = data_in ^ counter;
     
     
     
-    wire [13:0] stage1 = ((counter ^ data_in) & (14'd6996 >> 3));
+    wire [9:0] stage1 = (10'd809 * 10'd551);
     
     
     
-    wire [13:0] stage2 = ((14'd5195 << 2) ? (stage0 << 1) : 4927);
+    wire [9:0] stage2 = (stage1 ? 10'd234 : 631);
     
     
     
-    wire [13:0] stage3 = ((~14'd13517) * (stage0 * stage0));
-    
-    
-    
-    wire [13:0] stage4 = ((data_in & 14'd1729) >> 3);
-    
-    
-    
-    wire [13:0] stage5 = ((stage4 >> 1) ^ (14'd10313 * 14'd10640));
+    wire [9:0] stage3 = (10'd721 ? stage1 : 769);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0097 = (14'd782 - (14'd10551 & 14'd3539));
+            3'd0: result_0097 = (10'd447 >> 1);
             
-            4'd1: result_0097 = (14'd13385 + 14'd5978);
+            3'd1: result_0097 = (10'd833 + 10'd716);
             
-            4'd2: result_0097 = (~(stage4 << 1));
+            3'd2: result_0097 = (10'd790 | 10'd437);
             
-            default: result_0097 = stage5;
+            3'd3: result_0097 = (stage2 * 10'd242);
+            
+            3'd4: result_0097 = (~10'd869);
+            
+            3'd5: result_0097 = (10'd994 * 10'd422);
+            
+            default: result_0097 = stage3;
         endcase
     end
 

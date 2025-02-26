@@ -2,42 +2,49 @@
 module pipeline_0852(
     input clk,
     input rst_n,
-    input [7:0] data_in,
+    input [9:0] data_in,
     input [2:0] control,
-    output reg [7:0] result_0852
+    output reg [9:0] result_0852
 );
 
     // Pipeline registers
     
-    reg [7:0] stage0_reg;
-    wire [7:0] stage0_next;
+    reg [9:0] stage0_reg;
+    wire [9:0] stage0_next;
     
-    reg [7:0] stage1_reg;
-    wire [7:0] stage1_next;
+    reg [9:0] stage1_reg;
+    wire [9:0] stage1_next;
     
-    reg [7:0] stage2_reg;
-    wire [7:0] stage2_next;
+    reg [9:0] stage2_reg;
+    wire [9:0] stage2_next;
     
-    reg [7:0] stage3_reg;
-    wire [7:0] stage3_next;
+    reg [9:0] stage3_reg;
+    wire [9:0] stage3_next;
+    
+    reg [9:0] stage4_reg;
+    wire [9:0] stage4_next;
     
     
     // Combinational logic for each stage
     
     
-    assign stage0_next = (8'd69 ? control : 200);
+    assign stage0_next = (data_in << 1);
     
     
     
-    assign stage1_next = (8'd64 << 1);
+    assign stage1_next = (stage0_reg | 10'd377);
     
     
     
-    assign stage2_next = (8'd134 << 1);
+    assign stage2_next = (stage1_reg ^ 10'd835);
     
     
     
-    assign stage3_next = (stage2_reg + control);
+    assign stage3_next = (stage2_reg + 10'd1004);
+    
+    
+    
+    assign stage4_next = (10'd286 & stage3_reg);
     
     
     
@@ -45,13 +52,15 @@ module pipeline_0852(
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             
-            stage0_reg <= 8'd0;
+            stage0_reg <= 10'd0;
             
-            stage1_reg <= 8'd0;
+            stage1_reg <= 10'd0;
             
-            stage2_reg <= 8'd0;
+            stage2_reg <= 10'd0;
             
-            stage3_reg <= 8'd0;
+            stage3_reg <= 10'd0;
+            
+            stage4_reg <= 10'd0;
             
         end else begin
             
@@ -71,6 +80,10 @@ module pipeline_0852(
             stage3_reg <= stage3_next;
             
             
+            
+            stage4_reg <= stage4_next;
+            
+            
         end
     end
     
@@ -86,7 +99,9 @@ module pipeline_0852(
             
             3'd3: result_0852 = stage3_reg;
             
-            default: result_0852 = stage3_reg;
+            3'd4: result_0852 = stage4_reg;
+            
+            default: result_0852 = stage4_reg;
         endcase
     end
 

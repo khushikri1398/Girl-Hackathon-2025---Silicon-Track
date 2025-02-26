@@ -26,40 +26,54 @@ module counter_with_logic_0720(
     
     
     
-    wire [11:0] stage1 = ((12'd1767 ^ 12'd629) - (12'd2417 << 3));
+    wire [11:0] stage1 = (~stage0);
     
     
     
-    wire [11:0] stage2 = (~(data_in & 12'd138));
+    wire [11:0] stage2 = ((counter >> 2) << 1);
     
     
     
-    wire [11:0] stage3 = (counter ? (stage0 << 1) : 823);
+    wire [11:0] stage3 = (~(12'd1685 ? 12'd1893 : 1909));
     
     
     
-    wire [11:0] stage4 = ((~stage1) * 12'd336);
+    wire [11:0] stage4 = (12'd2379 - (~stage1));
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0720 = ((~12'd2708) >> 1);
+            4'd0: result_0720 = ((stage1 & 12'd4052) + stage1);
             
-            4'd1: result_0720 = (stage2 & stage2);
+            4'd1: result_0720 = (12'd939 << 3);
             
-            4'd2: result_0720 = ((12'd3214 >> 2) - 12'd3807);
+            4'd2: result_0720 = (~(12'd2592 ? 12'd859 : 521));
             
-            4'd3: result_0720 = ((stage3 - stage3) << 3);
+            4'd3: result_0720 = (~12'd1603);
             
-            4'd4: result_0720 = ((12'd3023 ^ 12'd2509) * (12'd1787 - stage1));
+            4'd4: result_0720 = (stage2 ^ (12'd2820 * 12'd3034));
             
-            4'd5: result_0720 = (12'd2436 >> 3);
+            4'd5: result_0720 = (~12'd2198);
             
-            4'd6: result_0720 = ((12'd1145 | 12'd1068) | (12'd715 - 12'd190));
+            4'd6: result_0720 = ((12'd3038 << 3) * (12'd2214 >> 2));
             
-            4'd7: result_0720 = ((12'd286 & 12'd1754) | (12'd4072 - 12'd3202));
+            4'd7: result_0720 = (stage4 - (stage4 << 3));
+            
+            4'd8: result_0720 = (12'd3387 ? (12'd1821 & stage2) : 2475);
+            
+            4'd9: result_0720 = ((stage3 ? 12'd2405 : 2409) ^ (12'd2510 ? 12'd1893 : 1617));
+            
+            4'd10: result_0720 = ((stage1 ? 12'd817 : 2119) - (12'd3306 ? 12'd328 : 3526));
+            
+            4'd11: result_0720 = ((12'd3263 ? 12'd1457 : 424) * (12'd1843 | stage0));
+            
+            4'd12: result_0720 = ((stage1 + 12'd3453) << 1);
+            
+            4'd13: result_0720 = (~(stage1 | 12'd831));
+            
+            4'd14: result_0720 = (~(~stage4));
             
             default: result_0720 = stage4;
         endcase

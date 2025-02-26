@@ -2,124 +2,86 @@
 module complex_datapath_0050(
     input clk,
     input rst_n,
-    input [7:0] a, b, c, d,
-    input [5:0] mode,
-    output reg [7:0] result_0050
+    input [5:0] a, b, c, d,
+    input [3:0] mode,
+    output reg [5:0] result_0050
 );
 
     // Internal signals
     
-    reg [7:0] internal0;
+    reg [5:0] internal0;
     
-    reg [7:0] internal1;
+    reg [5:0] internal1;
     
-    reg [7:0] internal2;
-    
-    reg [7:0] internal3;
+    reg [5:0] internal2;
     
     
     // Temporary signals for complex operations
     
-    reg [7:0] temp0;
+    reg [5:0] temp0;
     
-    reg [7:0] temp1;
-    
-    reg [7:0] temp2;
+    reg [5:0] temp1;
     
     
     // Combinational logic
     always @(*) begin
         // First level operations
         
-        internal0 = (~d);
+        internal0 = 6'd63;
         
-        internal1 = (~8'd43);
+        internal1 = d;
         
-        internal2 = (~b);
-        
-        internal3 = (b << 2);
+        internal2 = 6'd32;
         
         
         // Second level operations depending on mode
-        case(mode[5:3])
+        case(mode[3:2])
             
-            3'd0: begin
-                temp0 = ((8'd72 ? 8'd96 : 173) | (8'd112 ? internal1 : 7));
+            2'd0: begin
+                temp0 = (internal1 | 6'd30);
+                temp1 = (6'd62 << 1);
+                temp0 = (b >> 1);
             end
             
-            3'd1: begin
-                temp0 = ((internal1 ? internal1 : 223) & (internal2 & internal1));
+            2'd1: begin
+                temp0 = (a ? 6'd22 : 18);
             end
             
-            3'd2: begin
-                temp0 = (8'd148 & (8'd225 | 8'd78));
-                temp1 = ((~internal0) >> 2);
-                temp2 = (~(internal1 | 8'd79));
+            2'd2: begin
+                temp0 = (d & 6'd38);
             end
             
-            3'd3: begin
-                temp0 = ((b ^ 8'd53) ? (d << 2) : 45);
-            end
-            
-            3'd4: begin
-                temp0 = ((internal2 & 8'd80) - (d | internal0));
-            end
-            
-            3'd5: begin
-                temp0 = (~(c - b));
-            end
-            
-            3'd6: begin
-                temp0 = ((a ? internal0 : 199) & 8'd115);
-            end
-            
-            3'd7: begin
-                temp0 = ((8'd195 + 8'd143) ^ (8'd61 ? 8'd251 : 185));
-                temp1 = (8'd79 - a);
+            2'd3: begin
+                temp0 = (d >> 1);
+                temp1 = (6'd2 << 1);
             end
             
             default: begin
-                temp0 = (d ? internal1 : 174);
+                temp0 = 6'd58;
             end
         endcase
         
         // Final operations depending on mode
-        case(mode[2:0])
+        case(mode[1:0])
             
-            3'd0: begin
-                result_0050 = ((internal0 & internal1) | temp0);
+            2'd0: begin
+                result_0050 = (6'd40 - d);
             end
             
-            3'd1: begin
-                result_0050 = ((internal0 - internal1) - internal2);
+            2'd1: begin
+                result_0050 = (internal1 - 6'd1);
             end
             
-            3'd2: begin
-                result_0050 = ((temp0 + a) + (a * temp2));
+            2'd2: begin
+                result_0050 = (internal2 | internal0);
             end
             
-            3'd3: begin
-                result_0050 = (8'd202 * (a - internal0));
-            end
-            
-            3'd4: begin
-                result_0050 = (internal1 ? (c - temp1) : 224);
-            end
-            
-            3'd5: begin
-                result_0050 = (temp1 | internal1);
-            end
-            
-            3'd6: begin
-                result_0050 = ((temp1 * b) & (internal1 << 1));
-            end
-            
-            3'd7: begin
-                result_0050 = ((internal0 * 8'd64) << 1);
+            2'd3: begin
+                result_0050 = (6'd44 - b);
             end
             
             default: begin
-                result_0050 = (temp0 * internal0);
+                result_0050 = 6'd53;
             end
         endcase
     end
