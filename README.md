@@ -10,7 +10,7 @@ This project aims to create an AI algorithm to predict combinational logic depth
 
 ## Installation
 1. Clone the repository
-2. Install required packages: `pip install numpy pandas matplotlib scikit-learn tensorflow`
+2. Install required packages: `pip install numpy pandas matplotlib scikit-learn`
 
 ## Usage
 Run the main script: `python main.py`
