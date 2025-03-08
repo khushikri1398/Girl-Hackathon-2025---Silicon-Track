@@ -104,6 +104,4 @@ We experimented with the following **ML algorithms** to predict combinational de
 ---
 
 ## **Contributors**  
-**Khushi Kumari** and the **Girl Hackathon 2025 - Silicon Track Team**  
-
-🚀 **Pioneering AI-powered RTL Timing Analysis!**
+**Khushi Kumari**
