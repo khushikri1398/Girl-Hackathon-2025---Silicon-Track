@@ -12,8 +12,6 @@ This project aims to create an AI algorithm to predict combinational logic depth
 1. Clone the repository
 2. Install required packages: `pip install numpy pandas matplotlib scikit-learn`
 
-## Usage
-Run the main script: `python main.py`
 
 ## Dataset
 The script generates a synthetic dataset of 1000 RTL designs with varying complexities and estimated/actual combinational depths. The dataset includes the following features:
@@ -30,6 +28,7 @@ We implemented and compared multiple machine learning models:
 2. Random Forest
 3. XGBoost
 4. Support Vector Regression (SVR)
+5. Gradient Boosting
 Linear Regression was found to be the best performing model for this task.
 
 ## Results
@@ -47,4 +46,4 @@ The Linear Regression model achieves a high correlation between predicted and ac
 - Explore more advanced feature engineering techniques
 
 ## Contributors
-Amisha Rathi
+Khushi Kumari
