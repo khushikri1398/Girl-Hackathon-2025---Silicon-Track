@@ -30,8 +30,6 @@ We implemented and compared multiple machine learning models:
 2. Random Forest
 3. XGBoost
 4. Support Vector Regression (SVR)
-5. Neural Network
-
 Linear Regression was found to be the best performing model for this task.
 
 ## Results
