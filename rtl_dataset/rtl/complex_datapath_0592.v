@@ -31,61 +31,56 @@ module complex_datapath_0592(
     always @(*) begin
         // First level operations
         
-        internal0 = (8'd231 - d);
+        internal0 = (a & a);
         
-        internal1 = (8'd39 + a);
+        internal1 = (c - a);
         
-        internal2 = (~c);
+        internal2 = (8'd104 - 8'd97);
         
-        internal3 = (a | 8'd189);
+        internal3 = (d ? b : 198);
         
         
         // Second level operations depending on mode
         case(mode[5:3])
             
             3'd0: begin
-                temp0 = (8'd48 >> 1);
-                temp1 = (internal0 << 2);
-                temp2 = (d * (~internal2));
+                temp0 = ((c << 2) ? internal0 : 231);
+                temp1 = ((8'd137 - internal0) - (8'd187 & internal0));
             end
             
             3'd1: begin
-                temp0 = ((8'd206 ^ c) << 1);
-                temp1 = ((8'd149 & 8'd106) + c);
-                temp2 = ((internal1 << 1) * (8'd151 << 1));
+                temp0 = (~(internal2 >> 2));
             end
             
             3'd2: begin
-                temp0 = (~(internal0 - internal3));
+                temp0 = ((internal2 + 8'd178) << 1);
             end
             
             3'd3: begin
-                temp0 = ((~internal3) & (8'd13 + 8'd222));
-                temp1 = (c + 8'd47);
+                temp0 = ((a << 2) ^ (internal1 & 8'd132));
+                temp1 = ((8'd203 + c) - (8'd155 + a));
+                temp2 = (internal2 & 8'd252);
             end
             
             3'd4: begin
-                temp0 = ((a | internal1) - (internal1 + d));
-                temp1 = ((internal3 & b) >> 1);
+                temp0 = ((internal1 ? 8'd101 : 154) ? (~a) : 54);
+                temp1 = (c + d);
             end
             
             3'd5: begin
-                temp0 = ((c - c) + c);
-                temp1 = ((8'd58 - a) ^ (internal0 >> 1));
-                temp2 = ((a & internal2) ? a : 160);
+                temp0 = ((b << 2) ? (internal3 << 1) : 107);
             end
             
             3'd6: begin
-                temp0 = (~(8'd88 | d));
+                temp0 = ((b ^ internal1) * b);
             end
             
             3'd7: begin
-                temp0 = (~c);
-                temp1 = ((~c) << 2);
+                temp0 = (internal0 << 2);
             end
             
             default: begin
-                temp0 = (temp1 & 8'd60);
+                temp0 = (b - internal0);
             end
         endcase
         
@@ -93,39 +88,39 @@ module complex_datapath_0592(
         case(mode[2:0])
             
             3'd0: begin
-                result_0592 = (~(internal0 + internal0));
+                result_0592 = (internal3 + (a ? a : 102));
             end
             
             3'd1: begin
-                result_0592 = ((internal1 & internal0) >> 1);
+                result_0592 = (internal3 + (internal2 << 1));
             end
             
             3'd2: begin
-                result_0592 = (internal2 | (8'd8 | internal2));
+                result_0592 = (a >> 1);
             end
             
             3'd3: begin
-                result_0592 = ((8'd180 << 2) << 1);
+                result_0592 = (~temp1);
             end
             
             3'd4: begin
-                result_0592 = (temp0 + internal3);
+                result_0592 = ((internal3 ? d : 14) >> 2);
             end
             
             3'd5: begin
-                result_0592 = ((temp2 - a) & (c * temp1));
+                result_0592 = ((d ? d : 53) & internal2);
             end
             
             3'd6: begin
-                result_0592 = ((8'd72 & temp1) + (~8'd148));
+                result_0592 = ((8'd48 - temp1) ? temp0 : 175);
             end
             
             3'd7: begin
-                result_0592 = ((b << 1) << 2);
+                result_0592 = ((8'd71 ^ a) << 2);
             end
             
             default: begin
-                result_0592 = (~temp0);
+                result_0592 = (8'd70 ? temp1 : 15);
             end
         endcase
     end

@@ -26,36 +26,32 @@ module counter_with_logic_0964(
     
     
     
-    wire [9:0] stage1 = (10'd19 - 10'd1011);
+    wire [9:0] stage1 = (10'd93 << 1);
     
     
     
-    wire [9:0] stage2 = (data_in & counter);
+    wire [9:0] stage2 = (stage0 * stage0);
     
     
     
-    wire [9:0] stage3 = (10'd808 | counter);
+    wire [9:0] stage3 = (10'd870 * 10'd1021);
     
     
     
     always @(*) begin
         case(mode)
             
-            3'd0: result_0964 = (~stage2);
+            3'd0: result_0964 = (10'd58 | 10'd993);
             
-            3'd1: result_0964 = (10'd597 * stage0);
+            3'd1: result_0964 = (10'd195 * 10'd755);
             
-            3'd2: result_0964 = (10'd469 >> 2);
+            3'd2: result_0964 = (10'd107 ^ 10'd473);
             
-            3'd3: result_0964 = (10'd195 ^ 10'd529);
+            3'd3: result_0964 = (10'd780 << 2);
             
-            3'd4: result_0964 = (10'd360 - 10'd452);
+            3'd4: result_0964 = (10'd555 >> 2);
             
-            3'd5: result_0964 = (10'd907 & 10'd127);
-            
-            3'd6: result_0964 = (10'd844 + stage1);
-            
-            3'd7: result_0964 = (~stage0);
+            3'd5: result_0964 = (10'd109 - 10'd1003);
             
             default: result_0964 = stage3;
         endcase

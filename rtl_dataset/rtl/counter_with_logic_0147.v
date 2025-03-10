@@ -26,54 +26,44 @@ module counter_with_logic_0147(
     
     
     
-    wire [13:0] stage1 = (data_in - (14'd12292 | data_in));
+    wire [13:0] stage1 = ((14'd1053 * 14'd6034) & (counter - 14'd3622));
     
     
     
-    wire [13:0] stage2 = (~(data_in + 14'd14632));
+    wire [13:0] stage2 = ((data_in | stage0) & (data_in | stage0));
     
     
     
-    wire [13:0] stage3 = (~(14'd8561 ? 14'd12847 : 1896));
+    wire [13:0] stage3 = ((stage1 * stage2) | (14'd13376 ? data_in : 10908));
     
     
     
-    wire [13:0] stage4 = (~(14'd10642 - 14'd10538));
+    wire [13:0] stage4 = ((14'd12559 ^ stage1) * (14'd8923 | stage1));
     
     
     
-    wire [13:0] stage5 = ((counter >> 2) >> 1);
+    wire [13:0] stage5 = ((stage2 ^ stage0) | (stage2 ? 14'd12730 : 2956));
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0147 = ((stage3 ? 14'd9803 : 4956) | (stage3 & 14'd12763));
+            4'd0: result_0147 = ((14'd13992 ? 14'd5995 : 2543) | stage5);
             
-            4'd1: result_0147 = (14'd1653 >> 2);
+            4'd1: result_0147 = ((stage3 | 14'd7572) >> 3);
             
-            4'd2: result_0147 = (14'd4507 & (14'd1738 + 14'd5757));
+            4'd2: result_0147 = (stage2 ^ (stage2 + stage2));
             
-            4'd3: result_0147 = (14'd15471 << 2);
+            4'd3: result_0147 = ((14'd14307 ? 14'd1624 : 5167) & (stage5 >> 3));
             
-            4'd4: result_0147 = ((~stage1) - (~14'd2726));
+            4'd4: result_0147 = ((14'd11118 - 14'd15695) + (14'd5726 >> 3));
             
-            4'd5: result_0147 = ((~stage5) >> 3);
+            4'd5: result_0147 = ((~stage5) << 3);
             
-            4'd6: result_0147 = (~14'd15699);
+            4'd6: result_0147 = ((14'd8386 - 14'd6831) << 3);
             
-            4'd7: result_0147 = ((14'd14389 + stage4) << 3);
-            
-            4'd8: result_0147 = ((~14'd15348) + stage4);
-            
-            4'd9: result_0147 = ((14'd13185 + stage1) ? (14'd13076 | 14'd13941) : 14853);
-            
-            4'd10: result_0147 = (~stage5);
-            
-            4'd11: result_0147 = ((stage1 & 14'd15624) & 14'd5044);
-            
-            4'd12: result_0147 = ((14'd738 >> 3) + (stage1 | stage1));
+            4'd7: result_0147 = ((14'd11015 << 3) ? (14'd16119 & 14'd3709) : 1879);
             
             default: result_0147 = stage5;
         endcase

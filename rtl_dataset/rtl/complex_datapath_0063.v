@@ -27,37 +27,39 @@ module complex_datapath_0063(
     always @(*) begin
         // First level operations
         
-        internal0 = 6'd24;
+        internal0 = c;
         
-        internal1 = 6'd37;
+        internal1 = d;
         
-        internal2 = b;
+        internal2 = 6'd18;
         
         
         // Second level operations depending on mode
         case(mode[3:2])
             
             2'd0: begin
-                temp0 = (internal0 ? internal1 : 37);
-                temp1 = (~internal1);
+                temp0 = (~6'd17);
+                temp1 = (d >> 1);
+                temp0 = (6'd59 | a);
             end
             
             2'd1: begin
-                temp0 = (6'd60 + b);
-                temp1 = (6'd32 ^ d);
+                temp0 = (d << 1);
+                temp1 = (6'd35 & 6'd7);
             end
             
             2'd2: begin
-                temp0 = (~a);
-                temp1 = (c << 1);
+                temp0 = (internal1 & 6'd2);
+                temp1 = (internal0 << 1);
+                temp0 = (internal2 << 1);
             end
             
             2'd3: begin
-                temp0 = (6'd22 ? 6'd55 : 53);
+                temp0 = (a ? internal0 : 24);
             end
             
             default: begin
-                temp0 = 6'd51;
+                temp0 = d;
             end
         endcase
         
@@ -65,23 +67,23 @@ module complex_datapath_0063(
         case(mode[1:0])
             
             2'd0: begin
-                result_0063 = (internal0 + c);
+                result_0063 = (a * temp1);
             end
             
             2'd1: begin
-                result_0063 = (internal2 << 1);
+                result_0063 = (internal1 - internal1);
             end
             
             2'd2: begin
-                result_0063 = (6'd52 ^ internal2);
+                result_0063 = (internal0 * 6'd12);
             end
             
             2'd3: begin
-                result_0063 = (6'd31 | d);
+                result_0063 = (d * 6'd34);
             end
             
             default: begin
-                result_0063 = temp1;
+                result_0063 = temp0;
             end
         endcase
     end

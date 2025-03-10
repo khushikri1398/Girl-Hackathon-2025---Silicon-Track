@@ -3,61 +3,57 @@ module counter_with_logic_0999(
     input clk,
     input rst_n,
     input enable,
-    input [13:0] data_in,
-    input [3:0] mode,
-    output reg [13:0] result_0999
+    input [7:0] data_in,
+    input [2:0] mode,
+    output reg [7:0] result_0999
 );
 
-    reg [13:0] counter;
-    wire [13:0] intermediate;
+    reg [7:0] counter;
+    wire [7:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 14'd0;
+            counter <= 8'd0;
         else if (enable)
-            counter <= counter + 14'd1;
+            counter <= counter + 8'd1;
     end
     
     // Combinational logic
     
     
-    wire [13:0] stage0 = data_in ^ counter;
+    wire [7:0] stage0 = data_in ^ counter;
     
     
     
-    wire [13:0] stage1 = ((14'd7495 - data_in) ? (14'd3917 << 1) : 10772);
+    wire [7:0] stage1 = (counter ^ data_in);
     
     
     
-    wire [13:0] stage2 = ((stage0 * 14'd5984) >> 3);
-    
-    
-    
-    wire [13:0] stage3 = (14'd4953 + (14'd385 - counter));
-    
-    
-    
-    wire [13:0] stage4 = (stage0 - (14'd12918 | 14'd6286));
-    
-    
-    
-    wire [13:0] stage5 = ((stage2 + stage1) & (stage3 & stage2));
+    wire [7:0] stage2 = (data_in | data_in);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0999 = ((14'd1088 >> 3) << 3);
+            3'd0: result_0999 = (8'd200 | 8'd200);
             
-            4'd1: result_0999 = (14'd10961 ? 14'd5420 : 3352);
+            3'd1: result_0999 = (8'd63 >> 1);
             
-            4'd2: result_0999 = (14'd11261 & (14'd13856 << 3));
+            3'd2: result_0999 = (8'd145 | 8'd203);
             
-            4'd3: result_0999 = ((14'd16323 | stage0) & (14'd9526 | 14'd586));
+            3'd3: result_0999 = (8'd137 | 8'd78);
             
-            default: result_0999 = stage5;
+            3'd4: result_0999 = (8'd240 + 8'd196);
+            
+            3'd5: result_0999 = (stage0 << 1);
+            
+            3'd6: result_0999 = (8'd61 & stage0);
+            
+            3'd7: result_0999 = (8'd229 & 8'd14);
+            
+            default: result_0999 = stage2;
         endcase
     end
 

@@ -22,25 +22,25 @@ module processor_datapath_0124(
     always @(*) begin
         case(opcode)
             
-            7'd0: alu_result = (((20'd1007831 ? alu_b : 905363) & (20'd768555 >> 4)) - (alu_a ? alu_b : 125872));
+            7'd0: alu_result = (~((~20'd426171) ^ (alu_b - alu_a)));
             
-            7'd1: alu_result = (((20'd686433 * alu_b) - (~20'd945267)) ^ ((alu_b << 5) << 2));
+            7'd1: alu_result = ((20'd870552 ? 20'd740903 : 859335) + ((~alu_b) + (20'd197561 + alu_b)));
             
-            7'd2: alu_result = (((20'd596496 & 20'd9622) & (20'd877984 ^ alu_a)) & ((alu_b ? alu_a : 652763) ? (20'd940283 + alu_b) : 330623));
+            7'd2: alu_result = ((alu_a >> 1) >> 3);
             
-            7'd3: alu_result = (((20'd483303 << 3) & 20'd921158) | 20'd877917);
+            7'd3: alu_result = ((~(alu_a & 20'd988817)) << 4);
             
-            7'd4: alu_result = ((alu_b * 20'd684058) + 20'd38302);
+            7'd4: alu_result = ((20'd999871 + 20'd587792) - alu_a);
             
-            7'd5: alu_result = ((20'd591787 ^ (20'd416663 ^ alu_b)) & ((20'd11262 + alu_b) ? 20'd895225 : 665576));
+            7'd5: alu_result = ((20'd417660 ^ (20'd196083 * alu_b)) << 4);
             
-            7'd6: alu_result = (((alu_b & 20'd652816) ? alu_a : 659813) ? (~(20'd298385 ? 20'd40302 : 266012)) : 197024);
+            7'd6: alu_result = ((20'd93500 | (20'd346062 * 20'd225242)) ? ((~20'd91966) - (alu_a | 20'd680053)) : 491460);
             
-            7'd7: alu_result = (((alu_a << 1) ? 20'd381474 : 164716) | (~20'd437618));
+            7'd7: alu_result = (((alu_a << 5) ? (alu_a & 20'd968783) : 891965) ^ ((20'd560120 ^ 20'd594593) >> 4));
             
-            7'd8: alu_result = (20'd84552 ^ ((alu_a + 20'd804726) >> 3));
+            7'd8: alu_result = ((alu_a | (20'd320709 * 20'd755241)) << 2);
             
-            7'd9: alu_result = (((alu_b - 20'd720750) + (20'd614379 - alu_b)) + 20'd267135);
+            7'd9: alu_result = (~(~(20'd600719 << 3)));
             
             default: alu_result = alu_a;
         endcase

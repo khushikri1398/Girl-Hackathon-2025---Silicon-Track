@@ -31,27 +31,27 @@ module pipeline_0282(
     // Combinational logic for each stage
     
     
-    assign stage0_next = (~(data_in ? 12'd3119 : 2));
+    assign stage0_next = ((data_in << 1) * (data_in >> 1));
     
     
     
-    assign stage1_next = ((12'd844 & 12'd1068) & (12'd165 ^ stage0_reg));
+    assign stage1_next = ((12'd2451 >> 2) & (control >> 1));
     
     
     
-    assign stage2_next = (control >> 2);
+    assign stage2_next = ((stage1_reg ? 12'd3049 : 3615) ^ (12'd613 >> 2));
     
     
     
-    assign stage3_next = ((12'd3017 | control) >> 2);
+    assign stage3_next = ((control * 12'd345) ^ (12'd1768 | 12'd1520));
     
     
     
-    assign stage4_next = ((12'd130 & control) - (~12'd983));
+    assign stage4_next = ((control + control) << 2);
     
     
     
-    assign stage5_next = ((12'd3579 - 12'd2142) ^ (12'd263 | stage4_reg));
+    assign stage5_next = ((12'd2276 & 12'd1047) | (control ^ 12'd3976));
     
     
     

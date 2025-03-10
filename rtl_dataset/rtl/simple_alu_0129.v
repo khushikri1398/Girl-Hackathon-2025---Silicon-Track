@@ -8,13 +8,13 @@ module simple_alu_0129(
     always @(*) begin
         case(op)
             
-            2'd0: result_0129 = (6'd8 ^ 6'd31);
+            2'd0: result_0129 = (~b);
             
-            2'd1: result_0129 = (a ? 6'd13 : 9);
+            2'd1: result_0129 = (6'd50 ? a : 46);
             
-            2'd2: result_0129 = (6'd63 | 6'd48);
+            2'd2: result_0129 = (6'd37 ? 6'd2 : 23);
             
-            2'd3: result_0129 = (b << 1);
+            2'd3: result_0129 = (a & 6'd23);
             
             default: result_0129 = a;
         endcase

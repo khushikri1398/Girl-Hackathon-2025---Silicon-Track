@@ -26,32 +26,32 @@ module counter_with_logic_0894(
     
     
     
-    wire [7:0] stage1 = (8'd73 >> 1);
+    wire [7:0] stage1 = (~stage0);
     
     
     
-    wire [7:0] stage2 = (~8'd89);
+    wire [7:0] stage2 = (8'd69 << 2);
     
     
     
     always @(*) begin
         case(mode)
             
-            3'd0: result_0894 = (8'd101 | 8'd95);
+            3'd0: result_0894 = (8'd108 - 8'd248);
             
-            3'd1: result_0894 = (stage1 >> 1);
+            3'd1: result_0894 = (8'd109 * 8'd181);
             
-            3'd2: result_0894 = (8'd138 + stage2);
+            3'd2: result_0894 = (8'd83 | 8'd111);
             
-            3'd3: result_0894 = (8'd158 & 8'd223);
+            3'd3: result_0894 = (8'd3 * 8'd25);
             
-            3'd4: result_0894 = (stage2 * 8'd118);
+            3'd4: result_0894 = (stage2 ? 8'd167 : 86);
             
-            3'd5: result_0894 = (8'd231 ? stage1 : 28);
+            3'd5: result_0894 = (~8'd41);
             
-            3'd6: result_0894 = (stage1 * 8'd15);
+            3'd6: result_0894 = (~8'd85);
             
-            3'd7: result_0894 = (8'd166 * 8'd141);
+            3'd7: result_0894 = (~8'd231);
             
             default: result_0894 = stage2;
         endcase

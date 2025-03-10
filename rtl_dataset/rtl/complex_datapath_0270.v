@@ -27,39 +27,41 @@ module complex_datapath_0270(
     always @(*) begin
         // First level operations
         
-        internal0 = a;
+        internal0 = c;
         
-        internal1 = a;
+        internal1 = d;
         
-        internal2 = b;
+        internal2 = 6'd17;
         
         
         // Second level operations depending on mode
         case(mode[3:2])
             
             2'd0: begin
-                temp0 = (6'd54 ? internal1 : 27);
-                temp1 = (6'd31 ? internal0 : 4);
-                temp0 = (6'd32 ? c : 50);
+                temp0 = (6'd62 & 6'd51);
+                temp1 = (internal0 & c);
+                temp0 = (c ^ b);
             end
             
             2'd1: begin
-                temp0 = (a >> 1);
+                temp0 = (~a);
+                temp1 = (internal0 >> 1);
             end
             
             2'd2: begin
-                temp0 = (~6'd20);
-                temp1 = (a ? internal1 : 38);
-                temp0 = (6'd34 - internal2);
+                temp0 = (b ? internal1 : 49);
+                temp1 = (~internal2);
+                temp0 = (internal2 + c);
             end
             
             2'd3: begin
-                temp0 = (internal2 + 6'd29);
-                temp1 = (6'd61 + internal0);
+                temp0 = (6'd4 & 6'd57);
+                temp1 = (6'd47 & c);
+                temp0 = (a | 6'd16);
             end
             
             default: begin
-                temp0 = 6'd23;
+                temp0 = b;
             end
         endcase
         
@@ -67,23 +69,23 @@ module complex_datapath_0270(
         case(mode[1:0])
             
             2'd0: begin
-                result_0270 = (d & internal1);
+                result_0270 = (internal0 + b);
             end
             
             2'd1: begin
-                result_0270 = (b ^ temp0);
+                result_0270 = (a << 1);
             end
             
             2'd2: begin
-                result_0270 = (~6'd9);
+                result_0270 = (internal1 >> 1);
             end
             
             2'd3: begin
-                result_0270 = (6'd62 >> 1);
+                result_0270 = (b + internal1);
             end
             
             default: begin
-                result_0270 = internal2;
+                result_0270 = 6'd1;
             end
         endcase
     end

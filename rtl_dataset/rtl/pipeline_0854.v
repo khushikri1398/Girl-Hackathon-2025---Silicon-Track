@@ -2,56 +2,63 @@
 module pipeline_0854(
     input clk,
     input rst_n,
-    input [11:0] data_in,
+    input [13:0] data_in,
     input [3:0] control,
-    output reg [11:0] result_0854
+    output reg [13:0] result_0854
 );
 
     // Pipeline registers
     
-    reg [11:0] stage0_reg;
-    wire [11:0] stage0_next;
+    reg [13:0] stage0_reg;
+    wire [13:0] stage0_next;
     
-    reg [11:0] stage1_reg;
-    wire [11:0] stage1_next;
+    reg [13:0] stage1_reg;
+    wire [13:0] stage1_next;
     
-    reg [11:0] stage2_reg;
-    wire [11:0] stage2_next;
+    reg [13:0] stage2_reg;
+    wire [13:0] stage2_next;
     
-    reg [11:0] stage3_reg;
-    wire [11:0] stage3_next;
+    reg [13:0] stage3_reg;
+    wire [13:0] stage3_next;
     
-    reg [11:0] stage4_reg;
-    wire [11:0] stage4_next;
+    reg [13:0] stage4_reg;
+    wire [13:0] stage4_next;
     
-    reg [11:0] stage5_reg;
-    wire [11:0] stage5_next;
+    reg [13:0] stage5_reg;
+    wire [13:0] stage5_next;
+    
+    reg [13:0] stage6_reg;
+    wire [13:0] stage6_next;
     
     
     // Combinational logic for each stage
     
     
-    assign stage0_next = ((control ? data_in : 3249) ^ (12'd1319 >> 2));
+    assign stage0_next = ((control | data_in) - (14'd11079 | data_in));
     
     
     
-    assign stage1_next = (12'd3447 ^ (stage0_reg ^ 12'd2045));
+    assign stage1_next = ((14'd9732 & 14'd1483) >> 3);
     
     
     
-    assign stage2_next = (12'd2715 - (~12'd1845));
+    assign stage2_next = ((14'd2639 << 1) << 1);
     
     
     
-    assign stage3_next = ((12'd2905 & stage2_reg) | (12'd2567 ? control : 2689));
+    assign stage3_next = (14'd13277 & stage2_reg);
     
     
     
-    assign stage4_next = ((12'd738 & stage3_reg) | (12'd3168 & control));
+    assign stage4_next = ((~14'd5459) * (14'd4608 - 14'd4752));
     
     
     
-    assign stage5_next = (~(12'd1440 + 12'd3804));
+    assign stage5_next = ((stage4_reg * 14'd10140) ? (control + 14'd15992) : 8890);
+    
+    
+    
+    assign stage6_next = ((control - 14'd13577) | 14'd4769);
     
     
     
@@ -59,17 +66,19 @@ module pipeline_0854(
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             
-            stage0_reg <= 12'd0;
+            stage0_reg <= 14'd0;
             
-            stage1_reg <= 12'd0;
+            stage1_reg <= 14'd0;
             
-            stage2_reg <= 12'd0;
+            stage2_reg <= 14'd0;
             
-            stage3_reg <= 12'd0;
+            stage3_reg <= 14'd0;
             
-            stage4_reg <= 12'd0;
+            stage4_reg <= 14'd0;
             
-            stage5_reg <= 12'd0;
+            stage5_reg <= 14'd0;
+            
+            stage6_reg <= 14'd0;
             
         end else begin
             
@@ -97,6 +106,10 @@ module pipeline_0854(
             stage5_reg <= stage5_next;
             
             
+            
+            stage6_reg <= stage6_next;
+            
+            
         end
     end
     
@@ -116,7 +129,9 @@ module pipeline_0854(
             
             4'd5: result_0854 = stage5_reg;
             
-            default: result_0854 = stage5_reg;
+            4'd6: result_0854 = stage6_reg;
+            
+            default: result_0854 = stage6_reg;
         endcase
     end
 

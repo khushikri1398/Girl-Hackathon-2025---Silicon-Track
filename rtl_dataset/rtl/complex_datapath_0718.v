@@ -35,47 +35,46 @@ module complex_datapath_0718(
     always @(*) begin
         // First level operations
         
-        internal0 = (b >> 1);
+        internal0 = (10'd324 * a);
         
-        internal1 = (~10'd440);
+        internal1 = (c | 10'd352);
         
-        internal2 = (10'd872 << 2);
+        internal2 = (~a);
         
-        internal3 = (10'd196 * b);
+        internal3 = (d | 10'd463);
         
-        internal4 = (c ^ 10'd582);
+        internal4 = (10'd756 ? 10'd847 : 933);
         
         
         // Second level operations depending on mode
         case(mode[5:3])
             
             3'd0: begin
-                temp0 = (((internal1 - internal4) ? (~internal1) : 276) - (internal4 * 10'd711));
+                temp0 = (internal2 | b);
             end
             
             3'd1: begin
-                temp0 = (((internal1 + internal2) & internal0) | 10'd286);
-                temp1 = (((internal3 - 10'd693) & d) ? ((10'd761 | internal4) & (b << 2)) : 78);
-                temp2 = (d - (~(internal2 >> 1)));
+                temp0 = ((c >> 2) * ((~10'd95) * (10'd1014 << 2)));
             end
             
             3'd2: begin
-                temp0 = ((~(internal4 & b)) << 2);
-                temp1 = (((10'd823 >> 1) << 1) + ((b ? 10'd396 : 104) >> 2));
-                temp2 = (((10'd375 * b) ? (internal4 >> 1) : 274) >> 2);
+                temp0 = (c + (internal2 | (b << 2)));
+                temp1 = ((~(10'd878 ^ c)) + ((internal0 | b) - (b + internal2)));
             end
             
             3'd3: begin
-                temp0 = ((internal2 ^ (10'd695 + internal3)) + ((internal0 | internal2) << 2));
+                temp0 = (b << 1);
+                temp1 = (internal1 + (~(10'd411 | a)));
             end
             
             3'd4: begin
-                temp0 = ((a & a) ? ((~internal4) | (a >> 2)) : 618);
-                temp1 = ((10'd166 ^ (c | d)) ? ((d & internal2) ? c : 49) : 900);
+                temp0 = (((internal1 | 10'd328) ^ 10'd677) >> 1);
+                temp1 = (((c - d) ? (d ^ internal2) : 644) * ((internal2 * 10'd514) - internal4));
+                temp2 = ((internal4 ? 10'd644 : 38) | ((10'd825 & a) - (10'd680 - 10'd286)));
             end
             
             default: begin
-                temp0 = (temp1 * internal0);
+                temp0 = (internal1 << 2);
             end
         endcase
         
@@ -83,27 +82,27 @@ module complex_datapath_0718(
         case(mode[2:0])
             
             3'd0: begin
-                result_0718 = (((temp2 ? d : 711) ^ internal2) << 1);
+                result_0718 = (((10'd914 - 10'd919) | (d ? a : 4)) ? (temp1 ^ temp0) : 149);
             end
             
             3'd1: begin
-                result_0718 = ((temp1 >> 1) * ((temp1 & d) | (~internal2)));
+                result_0718 = (((internal0 + b) + (internal3 + internal1)) + temp1);
             end
             
             3'd2: begin
-                result_0718 = (((10'd88 - a) >> 2) - d);
+                result_0718 = (temp1 - internal0);
             end
             
             3'd3: begin
-                result_0718 = (((~temp1) ^ (10'd145 | temp2)) + d);
+                result_0718 = (internal4 >> 1);
             end
             
             3'd4: begin
-                result_0718 = (~((c + temp1) >> 2));
+                result_0718 = (((internal0 | a) << 2) ? c : 305);
             end
             
             default: begin
-                result_0718 = (internal2 ? temp2 : 112);
+                result_0718 = (c >> 1);
             end
         endcase
     end

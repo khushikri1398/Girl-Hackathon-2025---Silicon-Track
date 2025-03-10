@@ -2,35 +2,42 @@
 module pipeline_0700(
     input clk,
     input rst_n,
-    input [5:0] data_in,
-    input [1:0] control,
-    output reg [5:0] result_0700
+    input [7:0] data_in,
+    input [2:0] control,
+    output reg [7:0] result_0700
 );
 
     // Pipeline registers
     
-    reg [5:0] stage0_reg;
-    wire [5:0] stage0_next;
+    reg [7:0] stage0_reg;
+    wire [7:0] stage0_next;
     
-    reg [5:0] stage1_reg;
-    wire [5:0] stage1_next;
+    reg [7:0] stage1_reg;
+    wire [7:0] stage1_next;
     
-    reg [5:0] stage2_reg;
-    wire [5:0] stage2_next;
+    reg [7:0] stage2_reg;
+    wire [7:0] stage2_next;
+    
+    reg [7:0] stage3_reg;
+    wire [7:0] stage3_next;
     
     
     // Combinational logic for each stage
     
     
-    assign stage0_next = 6'd52;
+    assign stage0_next = (control ? 8'd166 : 242);
     
     
     
-    assign stage1_next = 6'd34;
+    assign stage1_next = (stage0_reg - stage0_reg);
     
     
     
-    assign stage2_next = 6'd10;
+    assign stage2_next = (~8'd253);
+    
+    
+    
+    assign stage3_next = (stage2_reg >> 2);
     
     
     
@@ -38,11 +45,13 @@ module pipeline_0700(
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             
-            stage0_reg <= 6'd0;
+            stage0_reg <= 8'd0;
             
-            stage1_reg <= 6'd0;
+            stage1_reg <= 8'd0;
             
-            stage2_reg <= 6'd0;
+            stage2_reg <= 8'd0;
+            
+            stage3_reg <= 8'd0;
             
         end else begin
             
@@ -58,6 +67,10 @@ module pipeline_0700(
             stage2_reg <= stage2_next;
             
             
+            
+            stage3_reg <= stage3_next;
+            
+            
         end
     end
     
@@ -65,13 +78,15 @@ module pipeline_0700(
     always @(*) begin
         case(control)
             
-            2'd0: result_0700 = stage0_reg;
+            3'd0: result_0700 = stage0_reg;
             
-            2'd1: result_0700 = stage1_reg;
+            3'd1: result_0700 = stage1_reg;
             
-            2'd2: result_0700 = stage2_reg;
+            3'd2: result_0700 = stage2_reg;
             
-            default: result_0700 = stage2_reg;
+            3'd3: result_0700 = stage3_reg;
+            
+            default: result_0700 = stage3_reg;
         endcase
     end
 

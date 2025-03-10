@@ -22,7 +22,7 @@ module pipeline_0847(
     // Combinational logic for each stage
     
     
-    assign stage0_next = 6'd60;
+    assign stage0_next = 6'd7;
     
     
     
@@ -30,7 +30,7 @@ module pipeline_0847(
     
     
     
-    assign stage2_next = 6'd56;
+    assign stage2_next = stage1_reg;
     
     
     

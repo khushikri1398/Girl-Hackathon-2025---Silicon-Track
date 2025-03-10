@@ -26,28 +26,32 @@ module counter_with_logic_0558(
     
     
     
-    wire [11:0] stage1 = (counter & (12'd101 ^ 12'd858));
+    wire [11:0] stage1 = (counter << 1);
     
     
     
-    wire [11:0] stage2 = ((~12'd2530) << 1);
+    wire [11:0] stage2 = (12'd905 - (~12'd3833));
     
     
     
-    wire [11:0] stage3 = ((counter | 12'd3503) << 1);
+    wire [11:0] stage3 = ((counter & 12'd1424) * (12'd1222 ? stage1 : 3944));
     
     
     
-    wire [11:0] stage4 = (stage1 >> 2);
+    wire [11:0] stage4 = ((stage0 ? stage3 : 527) ? (12'd737 - 12'd611) : 3222);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0558 = ((12'd3007 * 12'd2762) - (12'd870 ? 12'd2476 : 1872));
+            4'd0: result_0558 = ((stage2 | 12'd1221) << 1);
             
-            4'd1: result_0558 = ((~12'd3852) + (12'd3990 * 12'd1683));
+            4'd1: result_0558 = ((12'd680 - 12'd1232) >> 1);
+            
+            4'd2: result_0558 = (12'd564 & (12'd3883 << 1));
+            
+            4'd3: result_0558 = ((12'd746 << 3) << 3);
             
             default: result_0558 = stage4;
         endcase

@@ -26,44 +26,40 @@ module counter_with_logic_0224(
     
     
     
-    wire [11:0] stage1 = ((~12'd1642) + (counter >> 2));
+    wire [11:0] stage1 = (stage0 | stage0);
     
     
     
-    wire [11:0] stage2 = ((12'd258 >> 3) + (data_in | stage0));
+    wire [11:0] stage2 = (stage1 + (12'd1276 ^ data_in));
     
     
     
-    wire [11:0] stage3 = ((12'd3143 ? stage0 : 3326) << 1);
+    wire [11:0] stage3 = ((stage1 + 12'd3751) & 12'd1838);
     
     
     
-    wire [11:0] stage4 = (stage3 ? (12'd3043 + 12'd3387) : 2639);
+    wire [11:0] stage4 = ((12'd2901 << 1) >> 1);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0224 = (12'd3178 << 2);
+            4'd0: result_0224 = (12'd2436 * (12'd3600 | 12'd1884));
             
-            4'd1: result_0224 = (12'd4054 ? 12'd47 : 3502);
+            4'd1: result_0224 = (12'd1174 >> 1);
             
-            4'd2: result_0224 = (stage3 ^ (12'd3452 & 12'd1947));
+            4'd2: result_0224 = ((12'd1965 ? 12'd887 : 3895) << 1);
             
-            4'd3: result_0224 = ((12'd663 | 12'd3786) + (stage0 ? 12'd3475 : 2174));
+            4'd3: result_0224 = ((12'd3806 * 12'd1218) >> 2);
             
-            4'd4: result_0224 = ((stage2 ^ 12'd1583) ^ (12'd2593 >> 2));
+            4'd4: result_0224 = ((12'd2566 - 12'd1237) - (12'd2006 & 12'd1683));
             
-            4'd5: result_0224 = (12'd1835 - 12'd3069);
+            4'd5: result_0224 = (12'd3268 ^ (~12'd2412));
             
-            4'd6: result_0224 = ((12'd2220 >> 1) << 1);
+            4'd6: result_0224 = ((stage2 ^ 12'd2839) >> 2);
             
-            4'd7: result_0224 = ((12'd2316 * 12'd3546) + (stage2 ? 12'd3032 : 1461));
-            
-            4'd8: result_0224 = (12'd3702 * (12'd3846 >> 2));
-            
-            4'd9: result_0224 = ((~12'd312) ^ (stage2 & 12'd334));
+            4'd7: result_0224 = ((12'd3822 * 12'd1920) | 12'd2942);
             
             default: result_0224 = stage4;
         endcase

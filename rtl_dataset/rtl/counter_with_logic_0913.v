@@ -26,44 +26,48 @@ module counter_with_logic_0913(
     
     
     
-    wire [11:0] stage1 = (stage0 << 3);
+    wire [11:0] stage1 = ((data_in ^ data_in) << 1);
     
     
     
-    wire [11:0] stage2 = ((12'd185 + stage0) & (12'd2848 & stage0));
+    wire [11:0] stage2 = (12'd1137 >> 1);
     
     
     
-    wire [11:0] stage3 = (12'd92 ^ (12'd3718 & stage2));
+    wire [11:0] stage3 = ((12'd2897 & counter) + (stage0 + stage0));
     
     
     
-    wire [11:0] stage4 = ((12'd523 + counter) | (stage2 ? 12'd3039 : 1104));
+    wire [11:0] stage4 = (12'd3130 << 3);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0913 = ((stage4 - 12'd1689) << 1);
+            4'd0: result_0913 = ((~12'd1859) * (12'd687 >> 1));
             
-            4'd1: result_0913 = ((12'd84 & 12'd1295) << 2);
+            4'd1: result_0913 = ((12'd721 ^ 12'd2652) ^ (12'd526 << 2));
             
-            4'd2: result_0913 = ((12'd360 ^ 12'd4001) ? (12'd1764 | 12'd791) : 1724);
+            4'd2: result_0913 = (~12'd1751);
             
-            4'd3: result_0913 = ((12'd185 * stage2) >> 3);
+            4'd3: result_0913 = ((12'd788 + 12'd321) << 3);
             
-            4'd4: result_0913 = ((12'd3959 << 2) & 12'd1847);
+            4'd4: result_0913 = ((stage4 - 12'd430) ^ (12'd1564 & 12'd1816));
             
-            4'd5: result_0913 = ((stage3 ? 12'd3714 : 2268) >> 1);
+            4'd5: result_0913 = (12'd3866 << 2);
             
-            4'd6: result_0913 = (stage0 << 3);
+            4'd6: result_0913 = ((12'd2209 ? 12'd1051 : 1480) | (12'd3612 << 2));
             
-            4'd7: result_0913 = ((12'd2646 - 12'd2970) << 1);
+            4'd7: result_0913 = (~12'd1873);
             
-            4'd8: result_0913 = ((12'd2686 >> 1) ? stage2 : 3237);
+            4'd8: result_0913 = (12'd1715 | 12'd1690);
             
-            4'd9: result_0913 = ((12'd505 << 3) ? 12'd2047 : 185);
+            4'd9: result_0913 = ((~12'd1108) - (12'd2182 << 1));
+            
+            4'd10: result_0913 = ((~12'd2693) >> 1);
+            
+            4'd11: result_0913 = ((12'd66 + 12'd2800) & stage1);
             
             default: result_0913 = stage4;
         endcase

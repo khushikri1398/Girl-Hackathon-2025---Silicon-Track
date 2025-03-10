@@ -1,22 +1,18 @@
 
 module simple_alu_0420(
-    input [5:0] a, b,
-    input [1:0] op,
-    output reg [5:0] result_0420
+    input [9:0] a, b,
+    input [2:0] op,
+    output reg [9:0] result_0420
 );
 
     always @(*) begin
         case(op)
             
-            2'd0: result_0420 = (6'd23 * a);
+            3'd0: result_0420 = (((10'd99 & a) & 10'd855) ? 10'd696 : 547);
             
-            2'd1: result_0420 = (b | 6'd21);
+            3'd1: result_0420 = ((b << 1) ? b : 397);
             
-            2'd2: result_0420 = (6'd56 >> 1);
-            
-            2'd3: result_0420 = (a ^ 6'd63);
-            
-            default: result_0420 = 6'd57;
+            default: result_0420 = 10'd816;
         endcase
     end
 

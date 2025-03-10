@@ -3,57 +3,63 @@ module counter_with_logic_0544(
     input clk,
     input rst_n,
     input enable,
-    input [9:0] data_in,
-    input [2:0] mode,
-    output reg [9:0] result_0544
+    input [11:0] data_in,
+    input [3:0] mode,
+    output reg [11:0] result_0544
 );
 
-    reg [9:0] counter;
-    wire [9:0] intermediate;
+    reg [11:0] counter;
+    wire [11:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 10'd0;
+            counter <= 12'd0;
         else if (enable)
-            counter <= counter + 10'd1;
+            counter <= counter + 12'd1;
     end
     
     // Combinational logic
     
     
-    wire [9:0] stage0 = data_in ^ counter;
+    wire [11:0] stage0 = data_in ^ counter;
     
     
     
-    wire [9:0] stage1 = (10'd817 >> 2);
+    wire [11:0] stage1 = ((12'd1727 & 12'd2473) << 3);
     
     
     
-    wire [9:0] stage2 = (counter & 10'd146);
+    wire [11:0] stage2 = ((counter ? 12'd2578 : 3011) | (data_in << 1));
     
     
     
-    wire [9:0] stage3 = (stage2 + 10'd619);
+    wire [11:0] stage3 = ((stage2 ^ stage2) * data_in);
+    
+    
+    
+    wire [11:0] stage4 = (12'd3802 ^ (~12'd2434));
     
     
     
     always @(*) begin
         case(mode)
             
-            3'd0: result_0544 = (10'd60 + 10'd579);
+            4'd0: result_0544 = ((12'd3082 ^ 12'd1250) ? (12'd1732 - 12'd3888) : 2148);
             
-            3'd1: result_0544 = (10'd843 * 10'd857);
+            4'd1: result_0544 = ((12'd2001 | 12'd731) * 12'd3163);
             
-            3'd2: result_0544 = (10'd690 << 1);
+            4'd2: result_0544 = ((stage4 >> 3) & (12'd3573 >> 1));
             
-            3'd3: result_0544 = (10'd724 ? 10'd165 : 471);
+            4'd3: result_0544 = (~12'd2427);
             
-            3'd4: result_0544 = (10'd818 & 10'd576);
+            4'd4: result_0544 = (12'd2052 * (12'd2661 + stage2));
             
-            3'd5: result_0544 = (10'd31 ? 10'd151 : 205);
+            4'd5: result_0544 = ((12'd1309 + 12'd1879) & (12'd1031 ? 12'd3747 : 1479));
             
-            default: result_0544 = stage3;
+            4'd6: result_0544 = ((12'd120 - 12'd2454) << 2);
+            
+            default: result_0544 = stage4;
         endcase
     end
 

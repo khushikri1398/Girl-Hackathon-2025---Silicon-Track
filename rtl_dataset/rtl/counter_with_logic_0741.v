@@ -26,46 +26,48 @@ module counter_with_logic_0741(
     
     
     
-    wire [11:0] stage1 = ((counter >> 1) | stage0);
+    wire [11:0] stage1 = (stage0 << 1);
     
     
     
-    wire [11:0] stage2 = ((stage0 & stage1) | 12'd2348);
+    wire [11:0] stage2 = ((stage0 >> 3) + (stage0 ? counter : 927));
     
     
     
-    wire [11:0] stage3 = (12'd1744 * data_in);
+    wire [11:0] stage3 = ((~12'd2590) << 3);
     
     
     
-    wire [11:0] stage4 = ((~12'd428) - data_in);
+    wire [11:0] stage4 = ((12'd2668 - stage3) - stage3);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0741 = ((12'd452 ^ stage0) * 12'd1904);
+            4'd0: result_0741 = (stage3 + (stage3 << 1));
             
-            4'd1: result_0741 = ((12'd3899 & stage3) ^ (stage3 - 12'd3659));
+            4'd1: result_0741 = (~(stage1 | 12'd2410));
             
-            4'd2: result_0741 = ((12'd1448 | 12'd3346) + (stage3 >> 2));
+            4'd2: result_0741 = ((12'd3342 ? stage4 : 1375) - stage4);
             
-            4'd3: result_0741 = ((12'd4027 << 2) | (stage1 - stage1));
+            4'd3: result_0741 = ((12'd226 + 12'd665) >> 3);
             
-            4'd4: result_0741 = (12'd3023 - 12'd3172);
+            4'd4: result_0741 = (12'd1052 << 2);
             
-            4'd5: result_0741 = (~(12'd1732 & 12'd2608));
+            4'd5: result_0741 = (12'd1179 * (12'd44 ^ 12'd3540));
             
-            4'd6: result_0741 = ((12'd2155 - 12'd325) ^ (stage1 ^ stage1));
+            4'd6: result_0741 = (~(~12'd1287));
             
-            4'd7: result_0741 = ((stage4 >> 3) * 12'd773);
+            4'd7: result_0741 = ((12'd1636 & 12'd1234) >> 1);
             
-            4'd8: result_0741 = (~(12'd2836 + stage3));
+            4'd8: result_0741 = ((~12'd1223) * 12'd448);
             
-            4'd9: result_0741 = ((12'd3900 >> 3) | (~12'd3302));
+            4'd9: result_0741 = (stage1 & (12'd844 ? 12'd300 : 3183));
             
-            4'd10: result_0741 = (12'd2611 & (12'd3033 >> 1));
+            4'd10: result_0741 = ((~12'd523) ? (~12'd3629) : 1801);
+            
+            4'd11: result_0741 = (~(12'd2790 << 3));
             
             default: result_0741 = stage4;
         endcase

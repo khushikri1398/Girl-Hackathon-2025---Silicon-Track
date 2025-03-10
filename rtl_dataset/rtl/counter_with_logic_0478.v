@@ -26,30 +26,26 @@ module counter_with_logic_0478(
     
     
     
-    wire [9:0] stage1 = (counter ^ 10'd603);
+    wire [9:0] stage1 = (10'd167 * 10'd657);
     
     
     
-    wire [9:0] stage2 = (~stage1);
+    wire [9:0] stage2 = (stage0 ? 10'd243 : 99);
     
     
     
-    wire [9:0] stage3 = (stage0 * counter);
+    wire [9:0] stage3 = (~stage1);
     
     
     
     always @(*) begin
         case(mode)
             
-            3'd0: result_0478 = (stage0 * 10'd651);
+            3'd0: result_0478 = (10'd707 | 10'd278);
             
-            3'd1: result_0478 = (10'd834 - stage0);
+            3'd1: result_0478 = (stage1 | 10'd329);
             
-            3'd2: result_0478 = (stage0 & 10'd370);
-            
-            3'd3: result_0478 = (stage1 ^ stage1);
-            
-            3'd4: result_0478 = (10'd721 - 10'd200);
+            3'd2: result_0478 = (stage2 | stage2);
             
             default: result_0478 = stage3;
         endcase

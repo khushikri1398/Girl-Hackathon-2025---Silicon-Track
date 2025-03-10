@@ -26,11 +26,11 @@ module pipeline_0330(
     
     
     
-    assign stage1_next = 6'd50;
+    assign stage1_next = stage0_reg;
     
     
     
-    assign stage2_next = 6'd51;
+    assign stage2_next = 6'd3;
     
     
     

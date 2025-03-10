@@ -22,15 +22,15 @@ module pipeline_0472(
     // Combinational logic for each stage
     
     
-    assign stage0_next = 6'd52;
+    assign stage0_next = 6'd23;
     
     
     
-    assign stage1_next = 6'd54;
+    assign stage1_next = stage0_reg;
     
     
     
-    assign stage2_next = control;
+    assign stage2_next = 6'd40;
     
     
     

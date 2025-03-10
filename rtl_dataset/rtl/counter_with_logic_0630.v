@@ -3,53 +3,45 @@ module counter_with_logic_0630(
     input clk,
     input rst_n,
     input enable,
-    input [11:0] data_in,
-    input [3:0] mode,
-    output reg [11:0] result_0630
+    input [5:0] data_in,
+    input [1:0] mode,
+    output reg [5:0] result_0630
 );
 
-    reg [11:0] counter;
-    wire [11:0] intermediate;
+    reg [5:0] counter;
+    wire [5:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 12'd0;
+            counter <= 6'd0;
         else if (enable)
-            counter <= counter + 12'd1;
+            counter <= counter + 6'd1;
     end
     
     // Combinational logic
     
     
-    wire [11:0] stage0 = data_in ^ counter;
+    wire [5:0] stage0 = data_in ^ counter;
     
     
     
-    wire [11:0] stage1 = ((~data_in) + (12'd2128 & stage0));
-    
-    
-    
-    wire [11:0] stage2 = ((stage0 & counter) >> 1);
-    
-    
-    
-    wire [11:0] stage3 = ((counter ? 12'd3885 : 2432) << 1);
-    
-    
-    
-    wire [11:0] stage4 = ((12'd1316 + stage2) & (12'd3025 * counter));
+    wire [5:0] stage1 = counter;
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0630 = ((stage4 - stage4) ^ (stage4 | stage4));
+            2'd0: result_0630 = 6'd27;
             
-            4'd1: result_0630 = (12'd273 ^ (12'd761 + stage3));
+            2'd1: result_0630 = 6'd55;
             
-            default: result_0630 = stage4;
+            2'd2: result_0630 = 6'd48;
+            
+            2'd3: result_0630 = 6'd63;
+            
+            default: result_0630 = stage1;
         endcase
     end
 

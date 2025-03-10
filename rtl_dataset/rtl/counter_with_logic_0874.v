@@ -3,81 +3,65 @@ module counter_with_logic_0874(
     input clk,
     input rst_n,
     input enable,
-    input [13:0] data_in,
+    input [11:0] data_in,
     input [3:0] mode,
-    output reg [13:0] result_0874
+    output reg [11:0] result_0874
 );
 
-    reg [13:0] counter;
-    wire [13:0] intermediate;
+    reg [11:0] counter;
+    wire [11:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 14'd0;
+            counter <= 12'd0;
         else if (enable)
-            counter <= counter + 14'd1;
+            counter <= counter + 12'd1;
     end
     
     // Combinational logic
     
     
-    wire [13:0] stage0 = data_in ^ counter;
+    wire [11:0] stage0 = data_in ^ counter;
     
     
     
-    wire [13:0] stage1 = (counter >> 2);
+    wire [11:0] stage1 = (12'd2596 ? (12'd1525 - counter) : 137);
     
     
     
-    wire [13:0] stage2 = ((~14'd11916) - (data_in >> 1));
+    wire [11:0] stage2 = ((12'd2509 * stage1) << 1);
     
     
     
-    wire [13:0] stage3 = ((14'd255 | stage0) << 2);
+    wire [11:0] stage3 = ((stage2 & data_in) & (stage1 | stage0));
     
     
     
-    wire [13:0] stage4 = ((14'd13706 & stage3) + 14'd52);
-    
-    
-    
-    wire [13:0] stage5 = ((counter << 2) * (stage4 << 3));
+    wire [11:0] stage4 = ((12'd3180 ^ 12'd1575) & (12'd1206 ? 12'd3995 : 4011));
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0874 = (~(14'd10387 - 14'd15664));
+            4'd0: result_0874 = ((stage2 - 12'd468) - (12'd552 & 12'd1727));
             
-            4'd1: result_0874 = ((14'd777 | 14'd5910) & 14'd11617);
+            4'd1: result_0874 = (12'd1253 | (~stage4));
             
-            4'd2: result_0874 = (~(stage3 + 14'd12462));
+            4'd2: result_0874 = ((12'd2284 ^ 12'd3722) >> 1);
             
-            4'd3: result_0874 = (14'd1073 * (14'd7638 ? 14'd2261 : 12894));
+            4'd3: result_0874 = ((12'd626 | 12'd16) * (12'd2701 & 12'd1592));
             
-            4'd4: result_0874 = ((stage0 ? 14'd12711 : 16298) * (14'd9983 - stage0));
+            4'd4: result_0874 = (~(12'd3580 * 12'd3203));
             
-            4'd5: result_0874 = ((stage2 + 14'd1000) >> 2);
+            4'd5: result_0874 = ((12'd3330 ^ stage4) << 1);
             
-            4'd6: result_0874 = ((14'd15964 - 14'd7647) - 14'd9961);
+            4'd6: result_0874 = ((12'd1461 >> 1) << 1);
             
-            4'd7: result_0874 = (~(14'd8318 >> 3));
+            4'd7: result_0874 = ((12'd78 ^ stage4) ? (~12'd157) : 574);
             
-            4'd8: result_0874 = (14'd15800 | (14'd15478 + 14'd4605));
-            
-            4'd9: result_0874 = (~(stage5 >> 1));
-            
-            4'd10: result_0874 = (14'd14447 << 1);
-            
-            4'd11: result_0874 = ((stage2 ? 14'd12564 : 5603) | (14'd7470 ^ 14'd12220));
-            
-            4'd12: result_0874 = ((14'd14815 + 14'd11281) ? (14'd13880 ? 14'd5693 : 9706) : 4919);
-            
-            4'd13: result_0874 = (stage4 + (14'd11121 << 1));
-            
-            default: result_0874 = stage5;
+            default: result_0874 = stage4;
         endcase
     end
 

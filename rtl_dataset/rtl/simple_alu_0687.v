@@ -8,13 +8,15 @@ module simple_alu_0687(
     always @(*) begin
         case(op)
             
-            3'd0: result_0687 = (10'd321 ^ a);
+            3'd0: result_0687 = ((10'd857 ? 10'd825 : 949) + (10'd320 << 1));
             
-            3'd1: result_0687 = (10'd898 | ((10'd775 ? 10'd764 : 980) + (a + b)));
+            3'd1: result_0687 = (10'd724 ? (b + 10'd133) : 818);
             
-            3'd2: result_0687 = (10'd362 & ((10'd782 - 10'd1009) & b));
+            3'd2: result_0687 = (((10'd496 >> 1) & 10'd226) + 10'd364);
             
-            default: result_0687 = 10'd579;
+            3'd3: result_0687 = ((~(b & b)) + 10'd233);
+            
+            default: result_0687 = 10'd703;
         endcase
     end
 

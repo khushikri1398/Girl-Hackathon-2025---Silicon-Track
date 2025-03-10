@@ -3,61 +3,55 @@ module counter_with_logic_0979(
     input clk,
     input rst_n,
     input enable,
-    input [13:0] data_in,
+    input [11:0] data_in,
     input [3:0] mode,
-    output reg [13:0] result_0979
+    output reg [11:0] result_0979
 );
 
-    reg [13:0] counter;
-    wire [13:0] intermediate;
+    reg [11:0] counter;
+    wire [11:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 14'd0;
+            counter <= 12'd0;
         else if (enable)
-            counter <= counter + 14'd1;
+            counter <= counter + 12'd1;
     end
     
     // Combinational logic
     
     
-    wire [13:0] stage0 = data_in ^ counter;
+    wire [11:0] stage0 = data_in ^ counter;
     
     
     
-    wire [13:0] stage1 = ((data_in + 14'd8358) * (stage0 & counter));
+    wire [11:0] stage1 = (data_in << 3);
     
     
     
-    wire [13:0] stage2 = ((stage0 | 14'd14364) >> 3);
+    wire [11:0] stage2 = ((counter ^ stage0) ? (12'd721 * counter) : 3236);
     
     
     
-    wire [13:0] stage3 = ((stage2 ^ data_in) * (14'd10961 & stage1));
+    wire [11:0] stage3 = ((stage1 | 12'd734) - stage1);
     
     
     
-    wire [13:0] stage4 = (14'd1322 ? (14'd13704 - stage2) : 4813);
-    
-    
-    
-    wire [13:0] stage5 = (stage2 + (14'd12268 << 2));
+    wire [11:0] stage4 = (12'd981 & (~counter));
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0979 = (14'd10865 >> 3);
+            4'd0: result_0979 = (12'd2368 << 2);
             
-            4'd1: result_0979 = ((stage3 << 3) ? (stage3 << 2) : 502);
+            4'd1: result_0979 = (stage2 - (12'd3994 - 12'd2701));
             
-            4'd2: result_0979 = (14'd15926 + (14'd16038 ^ 14'd9957));
+            4'd2: result_0979 = (stage4 + (stage4 ^ stage4));
             
-            4'd3: result_0979 = (~(14'd10826 | 14'd6381));
-            
-            default: result_0979 = stage5;
+            default: result_0979 = stage4;
         endcase
     end
 

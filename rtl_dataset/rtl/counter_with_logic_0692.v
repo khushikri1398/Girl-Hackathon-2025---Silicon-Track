@@ -26,32 +26,36 @@ module counter_with_logic_0692(
     
     
     
-    wire [11:0] stage1 = ((12'd1438 ^ stage0) >> 2);
+    wire [11:0] stage1 = (12'd1329 + (stage0 - 12'd2814));
     
     
     
-    wire [11:0] stage2 = ((~counter) & stage1);
+    wire [11:0] stage2 = (stage0 + stage0);
     
     
     
-    wire [11:0] stage3 = ((stage2 | data_in) | (~12'd132));
+    wire [11:0] stage3 = ((12'd1537 - counter) >> 2);
     
     
     
-    wire [11:0] stage4 = (counter | (data_in ? 12'd3232 : 992));
+    wire [11:0] stage4 = ((12'd1766 + counter) ? 12'd3638 : 645);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0692 = (12'd3351 & 12'd50);
+            4'd0: result_0692 = (12'd3142 & (12'd1179 >> 1));
             
-            4'd1: result_0692 = ((12'd353 >> 3) + (12'd1742 * stage0));
+            4'd1: result_0692 = ((stage4 ? 12'd1468 : 241) * (stage4 | 12'd1991));
             
-            4'd2: result_0692 = ((stage2 * 12'd2222) + 12'd1828);
+            4'd2: result_0692 = ((12'd2957 & 12'd3958) << 1);
             
-            4'd3: result_0692 = (~(12'd3776 | 12'd1765));
+            4'd3: result_0692 = ((12'd2162 >> 2) ^ (12'd1222 << 2));
+            
+            4'd4: result_0692 = (12'd2932 | (12'd1373 + stage1));
+            
+            4'd5: result_0692 = (12'd2482 + (stage2 + stage2));
             
             default: result_0692 = stage4;
         endcase

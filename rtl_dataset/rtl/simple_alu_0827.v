@@ -1,20 +1,16 @@
 
 module simple_alu_0827(
-    input [5:0] a, b,
-    input [1:0] op,
-    output reg [5:0] result_0827
+    input [9:0] a, b,
+    input [2:0] op,
+    output reg [9:0] result_0827
 );
 
     always @(*) begin
         case(op)
             
-            2'd0: result_0827 = (6'd27 ^ 6'd59);
+            3'd0: result_0827 = (~10'd723);
             
-            2'd1: result_0827 = (a + a);
-            
-            2'd2: result_0827 = (6'd19 - b);
-            
-            2'd3: result_0827 = (6'd24 + 6'd56);
+            3'd1: result_0827 = (((a ^ 10'd477) ? (10'd454 | b) : 639) >> 1);
             
             default: result_0827 = b;
         endcase

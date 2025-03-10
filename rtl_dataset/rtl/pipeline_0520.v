@@ -2,35 +2,56 @@
 module pipeline_0520(
     input clk,
     input rst_n,
-    input [5:0] data_in,
-    input [1:0] control,
-    output reg [5:0] result_0520
+    input [11:0] data_in,
+    input [3:0] control,
+    output reg [11:0] result_0520
 );
 
     // Pipeline registers
     
-    reg [5:0] stage0_reg;
-    wire [5:0] stage0_next;
+    reg [11:0] stage0_reg;
+    wire [11:0] stage0_next;
     
-    reg [5:0] stage1_reg;
-    wire [5:0] stage1_next;
+    reg [11:0] stage1_reg;
+    wire [11:0] stage1_next;
     
-    reg [5:0] stage2_reg;
-    wire [5:0] stage2_next;
+    reg [11:0] stage2_reg;
+    wire [11:0] stage2_next;
+    
+    reg [11:0] stage3_reg;
+    wire [11:0] stage3_next;
+    
+    reg [11:0] stage4_reg;
+    wire [11:0] stage4_next;
+    
+    reg [11:0] stage5_reg;
+    wire [11:0] stage5_next;
     
     
     // Combinational logic for each stage
     
     
-    assign stage0_next = data_in;
+    assign stage0_next = ((data_in | data_in) * (12'd1838 & control));
     
     
     
-    assign stage1_next = stage0_reg;
+    assign stage1_next = ((12'd2405 ^ 12'd1182) * (~12'd3444));
     
     
     
-    assign stage2_next = stage1_reg;
+    assign stage2_next = (stage1_reg >> 2);
+    
+    
+    
+    assign stage3_next = ((12'd2374 | 12'd3731) & (12'd3979 * 12'd3723));
+    
+    
+    
+    assign stage4_next = ((~12'd647) & (12'd2828 * 12'd1711));
+    
+    
+    
+    assign stage5_next = (12'd2865 << 1);
     
     
     
@@ -38,11 +59,17 @@ module pipeline_0520(
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             
-            stage0_reg <= 6'd0;
+            stage0_reg <= 12'd0;
             
-            stage1_reg <= 6'd0;
+            stage1_reg <= 12'd0;
             
-            stage2_reg <= 6'd0;
+            stage2_reg <= 12'd0;
+            
+            stage3_reg <= 12'd0;
+            
+            stage4_reg <= 12'd0;
+            
+            stage5_reg <= 12'd0;
             
         end else begin
             
@@ -58,6 +85,18 @@ module pipeline_0520(
             stage2_reg <= stage2_next;
             
             
+            
+            stage3_reg <= stage3_next;
+            
+            
+            
+            stage4_reg <= stage4_next;
+            
+            
+            
+            stage5_reg <= stage5_next;
+            
+            
         end
     end
     
@@ -65,13 +104,19 @@ module pipeline_0520(
     always @(*) begin
         case(control)
             
-            2'd0: result_0520 = stage0_reg;
+            4'd0: result_0520 = stage0_reg;
             
-            2'd1: result_0520 = stage1_reg;
+            4'd1: result_0520 = stage1_reg;
             
-            2'd2: result_0520 = stage2_reg;
+            4'd2: result_0520 = stage2_reg;
             
-            default: result_0520 = stage2_reg;
+            4'd3: result_0520 = stage3_reg;
+            
+            4'd4: result_0520 = stage4_reg;
+            
+            4'd5: result_0520 = stage5_reg;
+            
+            default: result_0520 = stage5_reg;
         endcase
     end
 

@@ -8,23 +8,23 @@ module simple_alu_0970(
     always @(*) begin
         case(op)
             
-            3'd0: result_0970 = (8'd108 + a);
+            3'd0: result_0970 = ((8'd221 | a) ^ b);
             
-            3'd1: result_0970 = ((a & 8'd125) | (8'd186 >> 1));
+            3'd1: result_0970 = (a * (8'd219 ? 8'd196 : 141));
             
-            3'd2: result_0970 = ((8'd90 << 2) & (~8'd138));
+            3'd2: result_0970 = ((a ^ 8'd6) + (8'd201 ? 8'd134 : 224));
             
-            3'd3: result_0970 = (8'd92 - (8'd26 ? 8'd78 : 238));
+            3'd3: result_0970 = (a << 1);
             
-            3'd4: result_0970 = (8'd12 + (8'd46 & 8'd58));
+            3'd4: result_0970 = ((8'd141 << 1) * a);
             
-            3'd5: result_0970 = ((8'd73 ^ 8'd96) - 8'd205);
+            3'd5: result_0970 = ((8'd123 >> 2) << 1);
             
-            3'd6: result_0970 = (8'd128 << 1);
+            3'd6: result_0970 = ((8'd146 * a) - 8'd106);
             
-            3'd7: result_0970 = ((8'd211 * 8'd231) + (b | 8'd180));
+            3'd7: result_0970 = ((8'd58 - 8'd51) | (8'd198 & 8'd187));
             
-            default: result_0970 = a;
+            default: result_0970 = 8'd73;
         endcase
     end
 

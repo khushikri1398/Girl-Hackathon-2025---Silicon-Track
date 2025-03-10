@@ -22,25 +22,25 @@ module processor_datapath_0800(
     always @(*) begin
         case(opcode)
             
-            7'd0: alu_result = (~(20'd871459 ^ (alu_a & 20'd114930)));
+            7'd0: alu_result = (((20'd370010 + 20'd665632) >> 3) >> 1);
             
-            7'd1: alu_result = (((20'd818032 ? 20'd304211 : 739234) << 3) ^ (alu_a & (alu_a + alu_b)));
+            7'd1: alu_result = ((20'd48437 ^ (20'd531260 ^ 20'd534718)) ^ alu_b);
             
-            7'd2: alu_result = ((~20'd409616) - 20'd252838);
+            7'd2: alu_result = (20'd620191 | 20'd471564);
             
-            7'd3: alu_result = ((20'd724667 >> 5) >> 2);
+            7'd3: alu_result = (((alu_a - alu_a) ^ alu_b) | ((20'd258324 | 20'd1016986) ^ (~alu_b)));
             
-            7'd4: alu_result = (alu_a & 20'd327415);
+            7'd4: alu_result = (alu_b ? alu_b : 586565);
             
-            7'd5: alu_result = (~((alu_b | alu_a) ^ (20'd310828 - 20'd620820)));
+            7'd5: alu_result = (20'd896958 + ((20'd946490 * 20'd778248) ^ 20'd395602));
             
-            7'd6: alu_result = ((~(20'd752724 | alu_a)) & (alu_a << 2));
+            7'd6: alu_result = (20'd317328 | ((20'd512074 >> 5) - (alu_a & 20'd872137)));
             
-            7'd7: alu_result = (((20'd468601 + 20'd363063) >> 3) << 4);
+            7'd7: alu_result = (((20'd627223 ^ 20'd116438) - (20'd341942 & alu_a)) | (~(20'd553606 - 20'd913967)));
             
-            7'd8: alu_result = (~((~20'd871874) << 2));
+            7'd8: alu_result = ((alu_a ^ (alu_a - alu_a)) - ((~alu_a) << 4));
             
-            7'd9: alu_result = (alu_b & ((20'd532014 - alu_a) ^ alu_b));
+            7'd9: alu_result = (((20'd719703 | 20'd607087) | (alu_a | 20'd810766)) + ((alu_b * 20'd209256) * (20'd482702 & 20'd446142)));
             
             default: alu_result = alu_a;
         endcase

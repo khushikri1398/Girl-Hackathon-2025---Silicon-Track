@@ -27,38 +27,37 @@ module complex_datapath_0135(
     always @(*) begin
         // First level operations
         
-        internal0 = b;
+        internal0 = 6'd53;
         
-        internal1 = a;
+        internal1 = c;
         
-        internal2 = c;
+        internal2 = b;
         
         
         // Second level operations depending on mode
         case(mode[3:2])
             
             2'd0: begin
-                temp0 = (internal0 | 6'd54);
-                temp1 = (internal1 << 1);
-                temp0 = (internal0 & a);
+                temp0 = (d * internal2);
             end
             
             2'd1: begin
-                temp0 = (6'd45 + 6'd42);
-                temp1 = (internal0 | b);
-                temp0 = (~6'd11);
+                temp0 = (6'd22 - internal1);
+                temp1 = (internal2 & a);
+                temp0 = (a << 1);
             end
             
             2'd2: begin
-                temp0 = (d | internal1);
+                temp0 = (~6'd40);
+                temp1 = (~6'd46);
             end
             
             2'd3: begin
-                temp0 = (6'd44 & 6'd16);
+                temp0 = (d ^ d);
             end
             
             default: begin
-                temp0 = 6'd17;
+                temp0 = internal0;
             end
         endcase
         
@@ -66,23 +65,23 @@ module complex_datapath_0135(
         case(mode[1:0])
             
             2'd0: begin
-                result_0135 = (internal2 | 6'd61);
+                result_0135 = (b & internal2);
             end
             
             2'd1: begin
-                result_0135 = (6'd7 - a);
+                result_0135 = (internal1 ? temp1 : 10);
             end
             
             2'd2: begin
-                result_0135 = (d * temp1);
+                result_0135 = (temp1 ^ temp0);
             end
             
             2'd3: begin
-                result_0135 = (~b);
+                result_0135 = (internal1 * internal0);
             end
             
             default: begin
-                result_0135 = internal1;
+                result_0135 = b;
             end
         endcase
     end

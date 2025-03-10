@@ -26,20 +26,20 @@ module counter_with_logic_0490(
     
     
     
-    wire [5:0] stage1 = 6'd12;
+    wire [5:0] stage1 = 6'd54;
     
     
     
     always @(*) begin
         case(mode)
             
-            2'd0: result_0490 = 6'd39;
+            2'd0: result_0490 = 6'd9;
             
-            2'd1: result_0490 = 6'd3;
+            2'd1: result_0490 = 6'd5;
             
-            2'd2: result_0490 = 6'd16;
+            2'd2: result_0490 = stage1;
             
-            2'd3: result_0490 = 6'd25;
+            2'd3: result_0490 = 6'd10;
             
             default: result_0490 = stage1;
         endcase

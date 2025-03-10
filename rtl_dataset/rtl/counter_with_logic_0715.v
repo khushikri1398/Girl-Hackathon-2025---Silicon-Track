@@ -26,20 +26,20 @@ module counter_with_logic_0715(
     
     
     
-    wire [5:0] stage1 = stage0;
+    wire [5:0] stage1 = data_in;
     
     
     
     always @(*) begin
         case(mode)
             
-            2'd0: result_0715 = 6'd34;
+            2'd0: result_0715 = stage0;
             
-            2'd1: result_0715 = 6'd21;
+            2'd1: result_0715 = 6'd0;
             
-            2'd2: result_0715 = 6'd3;
+            2'd2: result_0715 = stage1;
             
-            2'd3: result_0715 = stage1;
+            2'd3: result_0715 = 6'd48;
             
             default: result_0715 = stage1;
         endcase

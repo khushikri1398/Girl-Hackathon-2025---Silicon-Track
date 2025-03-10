@@ -1,30 +1,30 @@
 
 module simple_alu_0750(
-    input [7:0] a, b,
-    input [2:0] op,
-    output reg [7:0] result_0750
+    input [11:0] a, b,
+    input [3:0] op,
+    output reg [11:0] result_0750
 );
 
     always @(*) begin
         case(op)
             
-            3'd0: result_0750 = ((8'd23 & b) | (b & 8'd10));
+            4'd0: result_0750 = (~a);
             
-            3'd1: result_0750 = (8'd135 | (8'd141 & b));
+            4'd1: result_0750 = (12'd282 << 2);
             
-            3'd2: result_0750 = ((8'd179 + 8'd152) << 2);
+            4'd2: result_0750 = (a + ((b << 3) ? 12'd2131 : 3089));
             
-            3'd3: result_0750 = (b * 8'd47);
+            4'd3: result_0750 = ((((12'd210 - a) + (a >> 1)) | (12'd2838 << 3)) & (12'd1573 * ((12'd1512 ^ a) - (12'd740 + b))));
             
-            3'd4: result_0750 = ((8'd192 >> 2) | 8'd4);
+            4'd4: result_0750 = ((12'd2648 & ((a >> 2) ^ b)) & ((~(a + a)) & ((12'd1216 << 2) | b)));
             
-            3'd5: result_0750 = ((b + b) ? a : 43);
+            4'd5: result_0750 = (((12'd2874 ^ b) << 3) ? ((~(12'd3610 >> 3)) | (12'd58 + (12'd301 ? b : 3935))) : 2501);
             
-            3'd6: result_0750 = ((~8'd204) << 1);
+            4'd6: result_0750 = (12'd3904 - (a >> 3));
             
-            3'd7: result_0750 = ((8'd59 + a) >> 2);
+            4'd7: result_0750 = ((((12'd3388 * b) - 12'd875) * a) | 12'd1181);
             
-            default: result_0750 = a;
+            default: result_0750 = 12'd560;
         endcase
     end
 

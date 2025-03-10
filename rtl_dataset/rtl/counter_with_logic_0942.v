@@ -3,45 +3,51 @@ module counter_with_logic_0942(
     input clk,
     input rst_n,
     input enable,
-    input [5:0] data_in,
-    input [1:0] mode,
-    output reg [5:0] result_0942
+    input [9:0] data_in,
+    input [2:0] mode,
+    output reg [9:0] result_0942
 );
 
-    reg [5:0] counter;
-    wire [5:0] intermediate;
+    reg [9:0] counter;
+    wire [9:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 6'd0;
+            counter <= 10'd0;
         else if (enable)
-            counter <= counter + 6'd1;
+            counter <= counter + 10'd1;
     end
     
     // Combinational logic
     
     
-    wire [5:0] stage0 = data_in ^ counter;
+    wire [9:0] stage0 = data_in ^ counter;
     
     
     
-    wire [5:0] stage1 = counter;
+    wire [9:0] stage1 = (data_in >> 2);
+    
+    
+    
+    wire [9:0] stage2 = (stage1 ? 10'd125 : 268);
+    
+    
+    
+    wire [9:0] stage3 = (stage2 >> 1);
     
     
     
     always @(*) begin
         case(mode)
             
-            2'd0: result_0942 = stage0;
+            3'd0: result_0942 = (10'd316 >> 2);
             
-            2'd1: result_0942 = 6'd12;
+            3'd1: result_0942 = (stage0 << 1);
             
-            2'd2: result_0942 = 6'd38;
+            3'd2: result_0942 = (stage2 & 10'd904);
             
-            2'd3: result_0942 = 6'd3;
-            
-            default: result_0942 = stage1;
+            default: result_0942 = stage3;
         endcase
     end
 

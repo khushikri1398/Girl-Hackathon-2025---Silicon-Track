@@ -28,23 +28,23 @@ module pipeline_0536(
     // Combinational logic for each stage
     
     
-    assign stage0_next = (data_in ? 10'd280 : 989);
+    assign stage0_next = (10'd200 ^ 10'd704);
     
     
     
-    assign stage1_next = (10'd559 >> 1);
+    assign stage1_next = (10'd167 * 10'd988);
     
     
     
-    assign stage2_next = (10'd279 ^ stage1_reg);
+    assign stage2_next = (10'd371 & 10'd851);
     
     
     
-    assign stage3_next = (stage2_reg ? control : 469);
+    assign stage3_next = (10'd934 * 10'd249);
     
     
     
-    assign stage4_next = (10'd385 & 10'd639);
+    assign stage4_next = (control + 10'd3);
     
     
     

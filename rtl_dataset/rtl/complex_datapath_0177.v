@@ -27,34 +27,34 @@ module complex_datapath_0177(
     always @(*) begin
         // First level operations
         
-        internal0 = 6'd47;
+        internal0 = d;
         
-        internal1 = 6'd10;
+        internal1 = 6'd48;
         
-        internal2 = a;
+        internal2 = 6'd11;
         
         
         // Second level operations depending on mode
         case(mode[3:2])
             
             2'd0: begin
-                temp0 = (6'd48 & c);
-                temp1 = (internal2 + b);
-                temp0 = (6'd48 | a);
+                temp0 = (internal0 * b);
             end
             
             2'd1: begin
-                temp0 = (internal0 ? internal2 : 60);
+                temp0 = (d * internal2);
+                temp1 = (d + 6'd46);
+                temp0 = (~internal2);
             end
             
             2'd2: begin
-                temp0 = (6'd7 >> 1);
-                temp1 = (c ^ internal0);
+                temp0 = (6'd46 + d);
             end
             
             2'd3: begin
-                temp0 = (6'd34 << 1);
-                temp1 = (internal1 - internal0);
+                temp0 = (internal0 << 1);
+                temp1 = (6'd61 * b);
+                temp0 = (a << 1);
             end
             
             default: begin
@@ -66,23 +66,23 @@ module complex_datapath_0177(
         case(mode[1:0])
             
             2'd0: begin
-                result_0177 = (b | 6'd45);
+                result_0177 = (d ? internal2 : 12);
             end
             
             2'd1: begin
-                result_0177 = (internal1 | c);
+                result_0177 = (a - internal1);
             end
             
             2'd2: begin
-                result_0177 = (b | temp1);
+                result_0177 = (6'd55 ? d : 12);
             end
             
             2'd3: begin
-                result_0177 = (b - temp0);
+                result_0177 = (6'd11 >> 1);
             end
             
             default: begin
-                result_0177 = 6'd54;
+                result_0177 = b;
             end
         endcase
     end

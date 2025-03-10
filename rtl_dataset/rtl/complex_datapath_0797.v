@@ -27,40 +27,36 @@ module complex_datapath_0797(
     always @(*) begin
         // First level operations
         
-        internal0 = 6'd3;
+        internal0 = 6'd35;
         
-        internal1 = 6'd50;
+        internal1 = d;
         
-        internal2 = 6'd13;
+        internal2 = 6'd18;
         
         
         // Second level operations depending on mode
         case(mode[3:2])
             
             2'd0: begin
-                temp0 = (6'd10 << 1);
-                temp1 = (internal1 << 1);
-                temp0 = (6'd39 >> 1);
+                temp0 = (internal1 << 1);
+                temp1 = (internal1 + 6'd0);
             end
             
             2'd1: begin
-                temp0 = (internal0 ^ internal1);
+                temp0 = (a * d);
             end
             
             2'd2: begin
-                temp0 = (d - 6'd48);
-                temp1 = (internal2 >> 1);
-                temp0 = (internal1 ^ internal0);
+                temp0 = (6'd44 + internal2);
+                temp1 = (internal2 * 6'd25);
             end
             
             2'd3: begin
-                temp0 = (d << 1);
-                temp1 = (6'd23 ^ internal2);
-                temp0 = (a >> 1);
+                temp0 = (b + 6'd53);
             end
             
             default: begin
-                temp0 = internal2;
+                temp0 = 6'd43;
             end
         endcase
         
@@ -68,23 +64,23 @@ module complex_datapath_0797(
         case(mode[1:0])
             
             2'd0: begin
-                result_0797 = (~internal1);
+                result_0797 = (b | 6'd1);
             end
             
             2'd1: begin
-                result_0797 = (6'd28 << 1);
+                result_0797 = (6'd23 >> 1);
             end
             
             2'd2: begin
-                result_0797 = (internal0 & c);
+                result_0797 = (temp0 - 6'd10);
             end
             
             2'd3: begin
-                result_0797 = (b * internal2);
+                result_0797 = (6'd39 ? c : 42);
             end
             
             default: begin
-                result_0797 = temp0;
+                result_0797 = 6'd23;
             end
         endcase
     end

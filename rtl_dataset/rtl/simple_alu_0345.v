@@ -1,20 +1,30 @@
 
 module simple_alu_0345(
-    input [9:0] a, b,
+    input [7:0] a, b,
     input [2:0] op,
-    output reg [9:0] result_0345
+    output reg [7:0] result_0345
 );
 
     always @(*) begin
         case(op)
             
-            3'd0: result_0345 = (((10'd397 ^ b) << 1) | (a ^ (a & 10'd897)));
+            3'd0: result_0345 = ((a + 8'd49) + (~8'd41));
             
-            3'd1: result_0345 = (((10'd762 ? 10'd832 : 943) << 2) ? ((b << 1) & (10'd933 ? b : 168)) : 356);
+            3'd1: result_0345 = ((~8'd155) ? (~8'd147) : 143);
             
-            3'd2: result_0345 = (((10'd906 | 10'd889) ? (a * 10'd800) : 992) ^ ((10'd341 ? a : 874) ^ (10'd978 << 1)));
+            3'd2: result_0345 = ((8'd99 | b) ? (8'd138 | a) : 108);
             
-            default: result_0345 = 10'd139;
+            3'd3: result_0345 = (~(8'd77 + 8'd11));
+            
+            3'd4: result_0345 = (8'd77 << 2);
+            
+            3'd5: result_0345 = ((8'd36 >> 2) ^ (8'd34 | 8'd218));
+            
+            3'd6: result_0345 = (~(8'd94 | b));
+            
+            3'd7: result_0345 = ((~b) * 8'd247);
+            
+            default: result_0345 = 8'd162;
         endcase
     end
 

@@ -22,69 +22,69 @@ module processor_datapath_0634(
     always @(*) begin
         case(opcode)
             
-            5'd0: alu_result = (12'd2592 << 2);
+            5'd0: alu_result = (12'd3445 | alu_b);
             
-            5'd1: alu_result = (alu_b | alu_b);
+            5'd1: alu_result = (alu_a ^ 12'd3287);
             
-            5'd2: alu_result = (12'd1683 - 12'd2399);
+            5'd2: alu_result = (alu_b << 2);
             
-            5'd3: alu_result = (alu_a << 2);
+            5'd3: alu_result = (alu_a | 12'd3061);
             
-            5'd4: alu_result = (alu_b - alu_b);
+            5'd4: alu_result = (alu_b >> 2);
             
-            5'd5: alu_result = (~12'd180);
+            5'd5: alu_result = (12'd169 ? 12'd3972 : 1613);
             
-            5'd6: alu_result = (alu_a | 12'd595);
+            5'd6: alu_result = (alu_a << 3);
             
-            5'd7: alu_result = (12'd2186 - alu_a);
+            5'd7: alu_result = (alu_b | 12'd1652);
             
-            5'd8: alu_result = (alu_b >> 3);
+            5'd8: alu_result = (alu_a << 1);
             
-            5'd9: alu_result = (12'd3997 >> 1);
+            5'd9: alu_result = (12'd2559 + 12'd2611);
             
-            5'd10: alu_result = (~12'd1580);
+            5'd10: alu_result = (12'd3888 << 2);
             
-            5'd11: alu_result = (12'd1729 << 1);
+            5'd11: alu_result = (12'd2953 | alu_b);
             
-            5'd12: alu_result = (12'd2479 | alu_b);
+            5'd12: alu_result = (alu_a & 12'd3877);
             
-            5'd13: alu_result = (12'd692 - alu_b);
+            5'd13: alu_result = (12'd1431 ^ 12'd70);
             
-            5'd14: alu_result = (12'd2123 ^ alu_a);
+            5'd14: alu_result = (12'd1857 & 12'd2281);
             
-            5'd15: alu_result = (12'd1007 << 1);
+            5'd15: alu_result = (12'd2180 ^ alu_b);
             
-            5'd16: alu_result = (alu_a & 12'd2848);
+            5'd16: alu_result = (alu_a * 12'd3160);
             
-            5'd17: alu_result = (alu_b ^ alu_a);
+            5'd17: alu_result = (alu_a | alu_b);
             
-            5'd18: alu_result = (12'd2119 << 2);
+            5'd18: alu_result = (12'd2479 - alu_a);
             
-            5'd19: alu_result = (12'd2792 & alu_b);
+            5'd19: alu_result = (alu_a >> 2);
             
-            5'd20: alu_result = (alu_b ^ 12'd1566);
+            5'd20: alu_result = (12'd2709 * 12'd2540);
             
-            5'd21: alu_result = (12'd797 ? alu_a : 1246);
+            5'd21: alu_result = (alu_b << 2);
             
-            5'd22: alu_result = (alu_a >> 1);
+            5'd22: alu_result = (12'd2475 - 12'd4011);
             
-            5'd23: alu_result = (alu_b | 12'd1155);
+            5'd23: alu_result = (alu_b << 1);
             
-            5'd24: alu_result = (alu_a ? 12'd2471 : 4);
+            5'd24: alu_result = (12'd128 ^ 12'd2997);
             
-            5'd25: alu_result = (alu_b ? 12'd3611 : 2758);
+            5'd25: alu_result = (alu_b - 12'd2601);
             
-            5'd26: alu_result = (12'd441 << 2);
+            5'd26: alu_result = (12'd3246 << 1);
             
-            5'd27: alu_result = (alu_a & alu_b);
+            5'd27: alu_result = (12'd3814 ^ 12'd3607);
             
-            5'd28: alu_result = (~12'd3054);
+            5'd28: alu_result = (12'd1211 ? 12'd2117 : 3346);
             
-            5'd29: alu_result = (12'd1248 & alu_b);
+            5'd29: alu_result = (12'd4035 ^ 12'd3520);
             
-            5'd30: alu_result = (~12'd1836);
+            5'd30: alu_result = (alu_a + 12'd2027);
             
-            5'd31: alu_result = (12'd1514 >> 3);
+            5'd31: alu_result = (12'd2703 | alu_a);
             
             default: alu_result = alu_a;
         endcase

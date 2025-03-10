@@ -25,19 +25,19 @@ module pipeline_0420(
     // Combinational logic for each stage
     
     
-    assign stage0_next = (data_in - 8'd173);
+    assign stage0_next = (data_in & data_in);
     
     
     
-    assign stage1_next = (8'd70 & stage0_reg);
+    assign stage1_next = (8'd72 + 8'd61);
     
     
     
-    assign stage2_next = (8'd43 - 8'd121);
+    assign stage2_next = (8'd161 * 8'd182);
     
     
     
-    assign stage3_next = (8'd204 >> 1);
+    assign stage3_next = (stage2_reg << 2);
     
     
     

@@ -3,63 +3,57 @@ module counter_with_logic_0470(
     input clk,
     input rst_n,
     input enable,
-    input [13:0] data_in,
-    input [3:0] mode,
-    output reg [13:0] result_0470
+    input [7:0] data_in,
+    input [2:0] mode,
+    output reg [7:0] result_0470
 );
 
-    reg [13:0] counter;
-    wire [13:0] intermediate;
+    reg [7:0] counter;
+    wire [7:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 14'd0;
+            counter <= 8'd0;
         else if (enable)
-            counter <= counter + 14'd1;
+            counter <= counter + 8'd1;
     end
     
     // Combinational logic
     
     
-    wire [13:0] stage0 = data_in ^ counter;
+    wire [7:0] stage0 = data_in ^ counter;
     
     
     
-    wire [13:0] stage1 = ((~counter) | (14'd10513 << 3));
+    wire [7:0] stage1 = (8'd158 << 2);
     
     
     
-    wire [13:0] stage2 = ((stage0 >> 2) & 14'd10907);
-    
-    
-    
-    wire [13:0] stage3 = ((stage0 - 14'd2470) * (14'd15024 & 14'd11401));
-    
-    
-    
-    wire [13:0] stage4 = (counter ? (stage0 >> 1) : 7022);
-    
-    
-    
-    wire [13:0] stage5 = ((14'd98 * stage0) + (stage2 ^ data_in));
+    wire [7:0] stage2 = (8'd78 >> 2);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0470 = ((~14'd10340) | (stage3 + stage3));
+            3'd0: result_0470 = (~stage1);
             
-            4'd1: result_0470 = (~(stage5 + 14'd15684));
+            3'd1: result_0470 = (~stage2);
             
-            4'd2: result_0470 = (~(14'd3705 ? stage3 : 6886));
+            3'd2: result_0470 = (8'd235 - 8'd222);
             
-            4'd3: result_0470 = ((14'd8992 ? 14'd11420 : 3118) - (14'd5468 ? 14'd8051 : 12486));
+            3'd3: result_0470 = (8'd203 ? 8'd195 : 177);
             
-            4'd4: result_0470 = ((14'd6236 + 14'd9963) << 1);
+            3'd4: result_0470 = (8'd65 ? 8'd28 : 192);
             
-            default: result_0470 = stage5;
+            3'd5: result_0470 = (8'd229 + 8'd137);
+            
+            3'd6: result_0470 = (8'd136 ^ 8'd189);
+            
+            3'd7: result_0470 = (8'd91 * 8'd116);
+            
+            default: result_0470 = stage2;
         endcase
     end
 

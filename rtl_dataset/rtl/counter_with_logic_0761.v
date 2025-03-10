@@ -3,61 +3,61 @@ module counter_with_logic_0761(
     input clk,
     input rst_n,
     input enable,
-    input [9:0] data_in,
-    input [2:0] mode,
-    output reg [9:0] result_0761
+    input [13:0] data_in,
+    input [3:0] mode,
+    output reg [13:0] result_0761
 );
 
-    reg [9:0] counter;
-    wire [9:0] intermediate;
+    reg [13:0] counter;
+    wire [13:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 10'd0;
+            counter <= 14'd0;
         else if (enable)
-            counter <= counter + 10'd1;
+            counter <= counter + 14'd1;
     end
     
     // Combinational logic
     
     
-    wire [9:0] stage0 = data_in ^ counter;
+    wire [13:0] stage0 = data_in ^ counter;
     
     
     
-    wire [9:0] stage1 = (10'd28 - counter);
+    wire [13:0] stage1 = ((14'd14973 | stage0) - (14'd8486 - data_in));
     
     
     
-    wire [9:0] stage2 = (stage0 | counter);
+    wire [13:0] stage2 = ((data_in << 3) >> 3);
     
     
     
-    wire [9:0] stage3 = (10'd8 << 2);
+    wire [13:0] stage3 = ((stage2 | data_in) + (14'd5984 << 1));
+    
+    
+    
+    wire [13:0] stage4 = ((counter * stage3) >> 2);
+    
+    
+    
+    wire [13:0] stage5 = ((stage2 * counter) >> 1);
     
     
     
     always @(*) begin
         case(mode)
             
-            3'd0: result_0761 = (10'd916 - 10'd353);
+            4'd0: result_0761 = ((14'd15324 << 3) & (stage4 ^ 14'd15591));
             
-            3'd1: result_0761 = (10'd450 * stage3);
+            4'd1: result_0761 = (14'd14971 + (14'd4931 >> 1));
             
-            3'd2: result_0761 = (stage2 + 10'd736);
+            4'd2: result_0761 = ((14'd4261 ^ 14'd1086) | (stage4 << 1));
             
-            3'd3: result_0761 = (10'd379 ? 10'd648 : 747);
+            4'd3: result_0761 = ((stage1 ^ 14'd10534) - 14'd3751);
             
-            3'd4: result_0761 = (10'd861 << 1);
-            
-            3'd5: result_0761 = (10'd891 * 10'd191);
-            
-            3'd6: result_0761 = (10'd632 & 10'd188);
-            
-            3'd7: result_0761 = (10'd697 - 10'd7);
-            
-            default: result_0761 = stage3;
+            default: result_0761 = stage5;
         endcase
     end
 

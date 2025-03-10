@@ -26,34 +26,30 @@ module counter_with_logic_0103(
     
     
     
-    wire [9:0] stage1 = (counter | 10'd596);
+    wire [9:0] stage1 = (10'd465 * 10'd803);
     
     
     
-    wire [9:0] stage2 = (10'd444 ^ stage0);
+    wire [9:0] stage2 = (10'd327 | 10'd91);
     
     
     
-    wire [9:0] stage3 = (data_in << 2);
+    wire [9:0] stage3 = (counter * stage1);
     
     
     
     always @(*) begin
         case(mode)
             
-            3'd0: result_0103 = (10'd324 >> 1);
+            3'd0: result_0103 = (~10'd1017);
             
-            3'd1: result_0103 = (10'd274 ? 10'd860 : 394);
+            3'd1: result_0103 = (10'd77 << 1);
             
-            3'd2: result_0103 = (stage2 ? stage2 : 544);
+            3'd2: result_0103 = (~10'd11);
             
-            3'd3: result_0103 = (stage3 - stage3);
+            3'd3: result_0103 = (10'd88 ? 10'd915 : 349);
             
-            3'd4: result_0103 = (10'd1014 ? stage2 : 674);
-            
-            3'd5: result_0103 = (10'd169 << 1);
-            
-            3'd6: result_0103 = (10'd252 | 10'd8);
+            3'd4: result_0103 = (~10'd206);
             
             default: result_0103 = stage3;
         endcase

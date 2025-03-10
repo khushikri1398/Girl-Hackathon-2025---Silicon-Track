@@ -3,75 +3,57 @@ module counter_with_logic_0126(
     input clk,
     input rst_n,
     input enable,
-    input [13:0] data_in,
-    input [3:0] mode,
-    output reg [13:0] result_0126
+    input [7:0] data_in,
+    input [2:0] mode,
+    output reg [7:0] result_0126
 );
 
-    reg [13:0] counter;
-    wire [13:0] intermediate;
+    reg [7:0] counter;
+    wire [7:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 14'd0;
+            counter <= 8'd0;
         else if (enable)
-            counter <= counter + 14'd1;
+            counter <= counter + 8'd1;
     end
     
     // Combinational logic
     
     
-    wire [13:0] stage0 = data_in ^ counter;
+    wire [7:0] stage0 = data_in ^ counter;
     
     
     
-    wire [13:0] stage1 = (~(14'd9810 ^ counter));
+    wire [7:0] stage1 = (stage0 >> 2);
     
     
     
-    wire [13:0] stage2 = ((stage1 * 14'd11694) | (stage1 & stage0));
-    
-    
-    
-    wire [13:0] stage3 = (~(14'd12412 & stage2));
-    
-    
-    
-    wire [13:0] stage4 = (~(stage2 >> 2));
-    
-    
-    
-    wire [13:0] stage5 = ((stage0 * data_in) & (14'd1569 & 14'd2532));
+    wire [7:0] stage2 = (stage0 + 8'd229);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0126 = ((14'd3915 * 14'd2320) | (14'd497 << 3));
+            3'd0: result_0126 = (8'd13 ? 8'd227 : 181);
             
-            4'd1: result_0126 = ((14'd8512 >> 2) & (14'd2010 << 1));
+            3'd1: result_0126 = (stage0 | 8'd126);
             
-            4'd2: result_0126 = ((14'd13919 | 14'd2582) + (14'd6056 | 14'd7913));
+            3'd2: result_0126 = (stage1 + 8'd210);
             
-            4'd3: result_0126 = (~(14'd3370 << 1));
+            3'd3: result_0126 = (8'd150 * 8'd187);
             
-            4'd4: result_0126 = ((14'd9412 - 14'd13885) ^ (stage4 ? stage4 : 10931));
+            3'd4: result_0126 = (stage2 << 1);
             
-            4'd5: result_0126 = (~14'd7545);
+            3'd5: result_0126 = (stage0 ? stage0 : 252);
             
-            4'd6: result_0126 = ((14'd7482 << 1) & (14'd4206 + 14'd16160));
+            3'd6: result_0126 = (8'd156 - 8'd113);
             
-            4'd7: result_0126 = (14'd6266 ^ 14'd2450);
+            3'd7: result_0126 = (8'd91 | 8'd128);
             
-            4'd8: result_0126 = (~(14'd14808 ? stage2 : 946));
-            
-            4'd9: result_0126 = (~(14'd4278 | 14'd7930));
-            
-            4'd10: result_0126 = (stage1 | (14'd10101 ? 14'd8389 : 7719));
-            
-            default: result_0126 = stage5;
+            default: result_0126 = stage2;
         endcase
     end
 

@@ -26,44 +26,32 @@ module counter_with_logic_0281(
     
     
     
-    wire [13:0] stage1 = ((stage0 ^ stage0) >> 3);
+    wire [13:0] stage1 = (14'd12804 >> 1);
     
     
     
-    wire [13:0] stage2 = ((data_in >> 3) << 1);
+    wire [13:0] stage2 = ((~data_in) | 14'd12383);
     
     
     
-    wire [13:0] stage3 = ((14'd5464 | stage2) - stage0);
+    wire [13:0] stage3 = (14'd15843 | (stage0 - counter));
     
     
     
-    wire [13:0] stage4 = (14'd4111 << 3);
+    wire [13:0] stage4 = ((stage0 * data_in) ^ (14'd3426 * stage0));
     
     
     
-    wire [13:0] stage5 = (stage4 - (stage0 << 3));
+    wire [13:0] stage5 = ((stage3 ^ data_in) * data_in);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0281 = ((14'd8324 * stage3) >> 2);
+            4'd0: result_0281 = ((14'd14174 << 1) - 14'd15911);
             
-            4'd1: result_0281 = ((14'd15308 + 14'd1961) << 2);
-            
-            4'd2: result_0281 = (~(~14'd2185));
-            
-            4'd3: result_0281 = (14'd1526 & (14'd12240 ^ 14'd8233));
-            
-            4'd4: result_0281 = ((14'd4567 | stage4) & (14'd2884 & 14'd233));
-            
-            4'd5: result_0281 = ((stage0 >> 3) ^ 14'd12515);
-            
-            4'd6: result_0281 = ((14'd1667 & 14'd4435) + (14'd11112 & 14'd3880));
-            
-            4'd7: result_0281 = (~14'd7910);
+            4'd1: result_0281 = ((stage4 * 14'd13648) ^ (14'd8720 ^ stage4));
             
             default: result_0281 = stage5;
         endcase

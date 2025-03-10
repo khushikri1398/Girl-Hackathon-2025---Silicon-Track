@@ -26,28 +26,38 @@ module counter_with_logic_0634(
     
     
     
-    wire [11:0] stage1 = (data_in * (12'd3754 ^ counter));
+    wire [11:0] stage1 = ((counter | counter) & (data_in ^ 12'd1910));
     
     
     
-    wire [11:0] stage2 = ((12'd1310 - 12'd179) ^ (stage1 - stage0));
+    wire [11:0] stage2 = ((counter + stage1) << 3);
     
     
     
-    wire [11:0] stage3 = (12'd3144 ^ (12'd3555 - 12'd450));
+    wire [11:0] stage3 = ((stage0 << 3) >> 1);
     
     
     
-    wire [11:0] stage4 = (12'd1864 & (stage0 & stage3));
+    wire [11:0] stage4 = (~stage3);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0634 = ((12'd1267 + 12'd961) >> 3);
+            4'd0: result_0634 = ((12'd2407 * 12'd300) ? (stage0 ^ stage0) : 2718);
             
-            4'd1: result_0634 = ((stage1 ^ 12'd3163) * (stage1 - 12'd1711));
+            4'd1: result_0634 = ((12'd507 | 12'd3681) - 12'd3579);
+            
+            4'd2: result_0634 = (~(stage4 | stage4));
+            
+            4'd3: result_0634 = (~(stage4 << 3));
+            
+            4'd4: result_0634 = ((12'd2961 * stage3) | (12'd2781 - 12'd1595));
+            
+            4'd5: result_0634 = (12'd1925 + (stage3 ^ stage3));
+            
+            4'd6: result_0634 = (12'd836 * 12'd2649);
             
             default: result_0634 = stage4;
         endcase

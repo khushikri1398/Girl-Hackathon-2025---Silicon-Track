@@ -1,18 +1,22 @@
 
 module simple_alu_0378(
-    input [11:0] a, b,
-    input [3:0] op,
-    output reg [11:0] result_0378
+    input [5:0] a, b,
+    input [1:0] op,
+    output reg [5:0] result_0378
 );
 
     always @(*) begin
         case(op)
             
-            4'd0: result_0378 = ((12'd3185 & (12'd2541 - (12'd3399 - 12'd1823))) ? 12'd81 : 2763);
+            2'd0: result_0378 = (6'd46 | b);
             
-            4'd1: result_0378 = (12'd318 ^ (((~12'd3723) >> 3) * (12'd612 | a)));
+            2'd1: result_0378 = (a * 6'd6);
             
-            default: result_0378 = 12'd1380;
+            2'd2: result_0378 = (6'd62 ^ a);
+            
+            2'd3: result_0378 = (a - b);
+            
+            default: result_0378 = 6'd59;
         endcase
     end
 

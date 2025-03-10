@@ -2,56 +2,42 @@
 module pipeline_0522(
     input clk,
     input rst_n,
-    input [11:0] data_in,
-    input [3:0] control,
-    output reg [11:0] result_0522
+    input [7:0] data_in,
+    input [2:0] control,
+    output reg [7:0] result_0522
 );
 
     // Pipeline registers
     
-    reg [11:0] stage0_reg;
-    wire [11:0] stage0_next;
+    reg [7:0] stage0_reg;
+    wire [7:0] stage0_next;
     
-    reg [11:0] stage1_reg;
-    wire [11:0] stage1_next;
+    reg [7:0] stage1_reg;
+    wire [7:0] stage1_next;
     
-    reg [11:0] stage2_reg;
-    wire [11:0] stage2_next;
+    reg [7:0] stage2_reg;
+    wire [7:0] stage2_next;
     
-    reg [11:0] stage3_reg;
-    wire [11:0] stage3_next;
-    
-    reg [11:0] stage4_reg;
-    wire [11:0] stage4_next;
-    
-    reg [11:0] stage5_reg;
-    wire [11:0] stage5_next;
+    reg [7:0] stage3_reg;
+    wire [7:0] stage3_next;
     
     
     // Combinational logic for each stage
     
     
-    assign stage0_next = ((12'd890 ^ 12'd554) & (12'd3893 << 1));
+    assign stage0_next = (8'd188 & data_in);
     
     
     
-    assign stage1_next = (12'd1598 ^ (12'd4026 * 12'd769));
+    assign stage1_next = (~8'd152);
     
     
     
-    assign stage2_next = ((stage1_reg + 12'd2443) ? (12'd3946 | 12'd1505) : 3742);
+    assign stage2_next = (8'd15 * 8'd193);
     
     
     
-    assign stage3_next = (control ? control : 1581);
-    
-    
-    
-    assign stage4_next = (12'd1410 | 12'd2249);
-    
-    
-    
-    assign stage5_next = ((12'd2887 * stage4_reg) ^ stage4_reg);
+    assign stage3_next = (stage2_reg & 8'd16);
     
     
     
@@ -59,17 +45,13 @@ module pipeline_0522(
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             
-            stage0_reg <= 12'd0;
+            stage0_reg <= 8'd0;
             
-            stage1_reg <= 12'd0;
+            stage1_reg <= 8'd0;
             
-            stage2_reg <= 12'd0;
+            stage2_reg <= 8'd0;
             
-            stage3_reg <= 12'd0;
-            
-            stage4_reg <= 12'd0;
-            
-            stage5_reg <= 12'd0;
+            stage3_reg <= 8'd0;
             
         end else begin
             
@@ -89,14 +71,6 @@ module pipeline_0522(
             stage3_reg <= stage3_next;
             
             
-            
-            stage4_reg <= stage4_next;
-            
-            
-            
-            stage5_reg <= stage5_next;
-            
-            
         end
     end
     
@@ -104,19 +78,15 @@ module pipeline_0522(
     always @(*) begin
         case(control)
             
-            4'd0: result_0522 = stage0_reg;
+            3'd0: result_0522 = stage0_reg;
             
-            4'd1: result_0522 = stage1_reg;
+            3'd1: result_0522 = stage1_reg;
             
-            4'd2: result_0522 = stage2_reg;
+            3'd2: result_0522 = stage2_reg;
             
-            4'd3: result_0522 = stage3_reg;
+            3'd3: result_0522 = stage3_reg;
             
-            4'd4: result_0522 = stage4_reg;
-            
-            4'd5: result_0522 = stage5_reg;
-            
-            default: result_0522 = stage5_reg;
+            default: result_0522 = stage3_reg;
         endcase
     end
 

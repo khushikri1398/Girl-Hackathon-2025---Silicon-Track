@@ -3,53 +3,59 @@ module counter_with_logic_0350(
     input clk,
     input rst_n,
     input enable,
-    input [11:0] data_in,
-    input [3:0] mode,
-    output reg [11:0] result_0350
+    input [9:0] data_in,
+    input [2:0] mode,
+    output reg [9:0] result_0350
 );
 
-    reg [11:0] counter;
-    wire [11:0] intermediate;
+    reg [9:0] counter;
+    wire [9:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 12'd0;
+            counter <= 10'd0;
         else if (enable)
-            counter <= counter + 12'd1;
+            counter <= counter + 10'd1;
     end
     
     // Combinational logic
     
     
-    wire [11:0] stage0 = data_in ^ counter;
+    wire [9:0] stage0 = data_in ^ counter;
     
     
     
-    wire [11:0] stage1 = ((counter << 1) + (12'd2216 << 3));
+    wire [9:0] stage1 = (10'd246 - 10'd9);
     
     
     
-    wire [11:0] stage2 = (counter ? 12'd3599 : 2064);
+    wire [9:0] stage2 = (counter + 10'd650);
     
     
     
-    wire [11:0] stage3 = (data_in ? (12'd195 ^ data_in) : 179);
-    
-    
-    
-    wire [11:0] stage4 = (12'd2635 << 3);
+    wire [9:0] stage3 = (10'd298 & stage2);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0350 = ((stage1 * 12'd1510) ^ (stage1 | 12'd2997));
+            3'd0: result_0350 = (10'd667 ? 10'd872 : 827);
             
-            4'd1: result_0350 = (12'd1140 | (12'd2 & 12'd697));
+            3'd1: result_0350 = (10'd868 - stage0);
             
-            default: result_0350 = stage4;
+            3'd2: result_0350 = (10'd984 ? 10'd232 : 276);
+            
+            3'd3: result_0350 = (10'd335 << 2);
+            
+            3'd4: result_0350 = (10'd747 << 1);
+            
+            3'd5: result_0350 = (10'd28 >> 2);
+            
+            3'd6: result_0350 = (10'd152 << 1);
+            
+            default: result_0350 = stage3;
         endcase
     end
 

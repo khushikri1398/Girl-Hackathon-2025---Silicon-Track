@@ -3,57 +3,57 @@ module counter_with_logic_0820(
     input clk,
     input rst_n,
     input enable,
-    input [9:0] data_in,
-    input [2:0] mode,
-    output reg [9:0] result_0820
+    input [11:0] data_in,
+    input [3:0] mode,
+    output reg [11:0] result_0820
 );
 
-    reg [9:0] counter;
-    wire [9:0] intermediate;
+    reg [11:0] counter;
+    wire [11:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 10'd0;
+            counter <= 12'd0;
         else if (enable)
-            counter <= counter + 10'd1;
+            counter <= counter + 12'd1;
     end
     
     // Combinational logic
     
     
-    wire [9:0] stage0 = data_in ^ counter;
+    wire [11:0] stage0 = data_in ^ counter;
     
     
     
-    wire [9:0] stage1 = (10'd567 & counter);
+    wire [11:0] stage1 = (data_in ^ 12'd1376);
     
     
     
-    wire [9:0] stage2 = (data_in + counter);
+    wire [11:0] stage2 = ((stage1 ? 12'd4014 : 901) * (data_in + data_in));
     
     
     
-    wire [9:0] stage3 = (stage1 >> 2);
+    wire [11:0] stage3 = ((stage1 ^ 12'd2220) & 12'd967);
+    
+    
+    
+    wire [11:0] stage4 = ((stage3 << 2) ? (stage1 * 12'd1812) : 1234);
     
     
     
     always @(*) begin
         case(mode)
             
-            3'd0: result_0820 = (10'd306 << 2);
+            4'd0: result_0820 = ((stage0 << 1) + (12'd86 - stage0));
             
-            3'd1: result_0820 = (~10'd284);
+            4'd1: result_0820 = ((12'd2270 << 2) - (12'd3869 - stage1));
             
-            3'd2: result_0820 = (~10'd523);
+            4'd2: result_0820 = ((12'd1032 ^ 12'd1060) * 12'd3823);
             
-            3'd3: result_0820 = (stage2 & 10'd225);
+            4'd3: result_0820 = (12'd3000 ^ (stage0 - stage0));
             
-            3'd4: result_0820 = (10'd1019 * stage1);
-            
-            3'd5: result_0820 = (stage0 + stage0);
-            
-            default: result_0820 = stage3;
+            default: result_0820 = stage4;
         endcase
     end
 

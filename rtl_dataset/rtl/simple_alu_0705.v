@@ -8,15 +8,15 @@ module simple_alu_0705(
     always @(*) begin
         case(op)
             
-            2'd0: result_0705 = (a ^ 6'd35);
+            2'd0: result_0705 = (a ^ 6'd0);
             
-            2'd1: result_0705 = (6'd6 + 6'd54);
+            2'd1: result_0705 = (6'd13 >> 1);
             
-            2'd2: result_0705 = (6'd16 & 6'd41);
+            2'd2: result_0705 = (6'd30 + a);
             
-            2'd3: result_0705 = (6'd10 - 6'd26);
+            2'd3: result_0705 = (6'd18 * 6'd30);
             
-            default: result_0705 = 6'd39;
+            default: result_0705 = 6'd58;
         endcase
     end
 

@@ -3,57 +3,69 @@ module counter_with_logic_0223(
     input clk,
     input rst_n,
     input enable,
-    input [7:0] data_in,
-    input [2:0] mode,
-    output reg [7:0] result_0223
+    input [11:0] data_in,
+    input [3:0] mode,
+    output reg [11:0] result_0223
 );
 
-    reg [7:0] counter;
-    wire [7:0] intermediate;
+    reg [11:0] counter;
+    wire [11:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 8'd0;
+            counter <= 12'd0;
         else if (enable)
-            counter <= counter + 8'd1;
+            counter <= counter + 12'd1;
     end
     
     // Combinational logic
     
     
-    wire [7:0] stage0 = data_in ^ counter;
+    wire [11:0] stage0 = data_in ^ counter;
     
     
     
-    wire [7:0] stage1 = (8'd46 * data_in);
+    wire [11:0] stage1 = ((12'd4064 ^ 12'd207) >> 3);
     
     
     
-    wire [7:0] stage2 = (stage1 * stage0);
+    wire [11:0] stage2 = ((stage0 - stage0) | (~12'd2187));
+    
+    
+    
+    wire [11:0] stage3 = ((stage2 + data_in) ? (counter ^ 12'd2542) : 3465);
+    
+    
+    
+    wire [11:0] stage4 = (~(stage1 ? data_in : 3335));
     
     
     
     always @(*) begin
         case(mode)
             
-            3'd0: result_0223 = (~8'd84);
+            4'd0: result_0223 = ((12'd3582 | stage1) - (~12'd2733));
             
-            3'd1: result_0223 = (8'd77 - 8'd58);
+            4'd1: result_0223 = (12'd2085 | stage4);
             
-            3'd2: result_0223 = (8'd1 >> 2);
+            4'd2: result_0223 = ((12'd608 ? stage2 : 3279) & 12'd3446);
             
-            3'd3: result_0223 = (8'd106 * stage1);
+            4'd3: result_0223 = ((12'd1310 + 12'd3020) | 12'd740);
             
-            3'd4: result_0223 = (8'd154 ^ 8'd241);
+            4'd4: result_0223 = ((12'd673 | stage2) - 12'd4046);
             
-            3'd5: result_0223 = (stage2 - 8'd17);
+            4'd5: result_0223 = (12'd1445 >> 3);
             
-            3'd6: result_0223 = (~stage1);
+            4'd6: result_0223 = ((12'd1111 | 12'd2493) * (stage1 ^ stage1));
             
-            3'd7: result_0223 = (8'd22 & 8'd38);
+            4'd7: result_0223 = ((12'd1003 >> 2) - 12'd772);
             
-            default: result_0223 = stage2;
+            4'd8: result_0223 = ((stage2 * 12'd3197) ^ (stage2 >> 1));
+            
+            4'd9: result_0223 = ((stage2 >> 3) & 12'd2425);
+            
+            default: result_0223 = stage4;
         endcase
     end
 

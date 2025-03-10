@@ -26,50 +26,56 @@ module counter_with_logic_0797(
     
     
     
-    wire [11:0] stage1 = ((12'd425 << 3) | (stage0 >> 1));
+    wire [11:0] stage1 = ((counter >> 2) - (12'd2616 << 3));
     
     
     
-    wire [11:0] stage2 = ((data_in << 3) + data_in);
+    wire [11:0] stage2 = (stage0 >> 3);
     
     
     
-    wire [11:0] stage3 = (~(counter << 1));
+    wire [11:0] stage3 = (stage0 - (stage2 | data_in));
     
     
     
-    wire [11:0] stage4 = ((stage3 * counter) | (data_in & 12'd3590));
+    wire [11:0] stage4 = ((12'd2455 - stage0) ? (stage0 - stage2) : 3891);
     
     
     
     always @(*) begin
         case(mode)
             
-            4'd0: result_0797 = ((12'd3903 ^ 12'd1047) << 1);
+            4'd0: result_0797 = ((12'd2803 & 12'd3517) | (12'd2281 ^ stage0));
             
-            4'd1: result_0797 = (stage1 * (~12'd3862));
+            4'd1: result_0797 = ((12'd534 + 12'd2631) - (~stage3));
             
-            4'd2: result_0797 = ((stage4 * 12'd2748) | (12'd1993 << 2));
+            4'd2: result_0797 = ((12'd2642 ? stage2 : 11) + (12'd192 | 12'd1276));
             
-            4'd3: result_0797 = ((stage1 ^ stage1) >> 2);
+            4'd3: result_0797 = ((stage1 << 2) - (12'd1010 ? 12'd2878 : 502));
             
-            4'd4: result_0797 = ((12'd3202 & 12'd3498) << 2);
+            4'd4: result_0797 = ((12'd2234 >> 3) | (12'd574 + 12'd3977));
             
-            4'd5: result_0797 = (12'd2839 | (12'd1740 | stage3));
+            4'd5: result_0797 = ((12'd1955 >> 2) << 2);
             
-            4'd6: result_0797 = ((12'd1033 ^ 12'd928) << 2);
+            4'd6: result_0797 = ((12'd2520 | 12'd14) << 2);
             
-            4'd7: result_0797 = ((12'd1782 | 12'd886) & (stage0 - 12'd1751));
+            4'd7: result_0797 = (~12'd1631);
             
-            4'd8: result_0797 = ((12'd3380 * 12'd1957) << 3);
+            4'd8: result_0797 = (12'd2242 * (12'd1570 ? 12'd2134 : 1398));
             
-            4'd9: result_0797 = ((12'd2216 & 12'd3166) ? 12'd1359 : 460);
+            4'd9: result_0797 = ((12'd3960 - 12'd2406) * (12'd1672 - 12'd3337));
             
-            4'd10: result_0797 = ((12'd4055 ^ stage1) - (stage1 * 12'd19));
+            4'd10: result_0797 = ((stage3 << 2) + stage3);
             
-            4'd11: result_0797 = ((stage2 | 12'd3699) * (12'd1718 & stage2));
+            4'd11: result_0797 = (12'd2432 * (stage0 >> 3));
             
-            4'd12: result_0797 = (12'd3568 ? (12'd245 | 12'd3729) : 186);
+            4'd12: result_0797 = ((12'd3984 ^ 12'd1278) >> 3);
+            
+            4'd13: result_0797 = ((12'd499 << 3) >> 2);
+            
+            4'd14: result_0797 = ((12'd2200 | 12'd1120) << 2);
+            
+            4'd15: result_0797 = ((12'd2047 * stage2) << 3);
             
             default: result_0797 = stage4;
         endcase

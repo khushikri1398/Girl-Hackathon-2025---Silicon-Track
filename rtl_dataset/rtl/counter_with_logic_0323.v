@@ -26,32 +26,32 @@ module counter_with_logic_0323(
     
     
     
-    wire [7:0] stage1 = (~counter);
+    wire [7:0] stage1 = (stage0 * counter);
     
     
     
-    wire [7:0] stage2 = (8'd147 ^ stage1);
+    wire [7:0] stage2 = (~8'd101);
     
     
     
     always @(*) begin
         case(mode)
             
-            3'd0: result_0323 = (~stage1);
+            3'd0: result_0323 = (8'd54 >> 2);
             
-            3'd1: result_0323 = (8'd223 ^ stage1);
+            3'd1: result_0323 = (8'd182 << 1);
             
-            3'd2: result_0323 = (stage1 ? 8'd145 : 52);
+            3'd2: result_0323 = (8'd69 >> 2);
             
-            3'd3: result_0323 = (stage2 >> 1);
+            3'd3: result_0323 = (8'd150 << 2);
             
-            3'd4: result_0323 = (8'd167 >> 2);
+            3'd4: result_0323 = (8'd38 * 8'd70);
             
-            3'd5: result_0323 = (8'd32 | stage1);
+            3'd5: result_0323 = (stage2 ^ stage2);
             
-            3'd6: result_0323 = (8'd131 | stage1);
+            3'd6: result_0323 = (8'd10 << 2);
             
-            3'd7: result_0323 = (~stage2);
+            3'd7: result_0323 = (8'd87 & 8'd139);
             
             default: result_0323 = stage2;
         endcase

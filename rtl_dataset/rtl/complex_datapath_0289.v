@@ -27,39 +27,42 @@ module complex_datapath_0289(
     always @(*) begin
         // First level operations
         
-        internal0 = 6'd53;
+        internal0 = b;
         
-        internal1 = b;
+        internal1 = c;
         
-        internal2 = a;
+        internal2 = d;
         
         
         // Second level operations depending on mode
         case(mode[3:2])
             
             2'd0: begin
-                temp0 = (internal2 + internal1);
-                temp1 = (c ? c : 9);
+                temp0 = (6'd38 ^ 6'd54);
+                temp1 = (6'd18 << 1);
+                temp0 = (6'd36 | 6'd47);
             end
             
             2'd1: begin
-                temp0 = (c * d);
-                temp1 = (d >> 1);
+                temp0 = (internal0 - internal0);
+                temp1 = (6'd48 - 6'd58);
+                temp0 = (internal2 | internal0);
             end
             
             2'd2: begin
-                temp0 = (a << 1);
-                temp1 = (6'd28 | internal0);
+                temp0 = (d | 6'd35);
+                temp1 = (6'd4 >> 1);
+                temp0 = (6'd0 - d);
             end
             
             2'd3: begin
-                temp0 = (6'd33 * 6'd20);
-                temp1 = (internal2 + internal0);
-                temp0 = (6'd60 - 6'd27);
+                temp0 = (c ? internal1 : 14);
+                temp1 = (~b);
+                temp0 = (d << 1);
             end
             
             default: begin
-                temp0 = temp1;
+                temp0 = 6'd40;
             end
         endcase
         
@@ -67,19 +70,19 @@ module complex_datapath_0289(
         case(mode[1:0])
             
             2'd0: begin
-                result_0289 = (c & 6'd11);
+                result_0289 = (6'd54 << 1);
             end
             
             2'd1: begin
-                result_0289 = (6'd54 * 6'd7);
+                result_0289 = (6'd11 & d);
             end
             
             2'd2: begin
-                result_0289 = (internal0 * 6'd12);
+                result_0289 = (b ? 6'd58 : 25);
             end
             
             2'd3: begin
-                result_0289 = (6'd1 | d);
+                result_0289 = (a ^ d);
             end
             
             default: begin

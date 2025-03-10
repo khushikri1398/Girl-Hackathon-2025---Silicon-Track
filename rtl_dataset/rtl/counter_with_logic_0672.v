@@ -3,59 +3,57 @@ module counter_with_logic_0672(
     input clk,
     input rst_n,
     input enable,
-    input [9:0] data_in,
+    input [7:0] data_in,
     input [2:0] mode,
-    output reg [9:0] result_0672
+    output reg [7:0] result_0672
 );
 
-    reg [9:0] counter;
-    wire [9:0] intermediate;
+    reg [7:0] counter;
+    wire [7:0] intermediate;
     
     // Counter logic
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            counter <= 10'd0;
+            counter <= 8'd0;
         else if (enable)
-            counter <= counter + 10'd1;
+            counter <= counter + 8'd1;
     end
     
     // Combinational logic
     
     
-    wire [9:0] stage0 = data_in ^ counter;
+    wire [7:0] stage0 = data_in ^ counter;
     
     
     
-    wire [9:0] stage1 = (data_in | 10'd916);
+    wire [7:0] stage1 = (8'd133 ^ stage0);
     
     
     
-    wire [9:0] stage2 = (10'd859 - data_in);
-    
-    
-    
-    wire [9:0] stage3 = (10'd4 * 10'd27);
+    wire [7:0] stage2 = (stage0 >> 1);
     
     
     
     always @(*) begin
         case(mode)
             
-            3'd0: result_0672 = (10'd22 * 10'd377);
+            3'd0: result_0672 = (8'd194 ^ 8'd177);
             
-            3'd1: result_0672 = (10'd448 ? 10'd446 : 308);
+            3'd1: result_0672 = (8'd50 >> 1);
             
-            3'd2: result_0672 = (~stage3);
+            3'd2: result_0672 = (stage0 + 8'd211);
             
-            3'd3: result_0672 = (10'd507 ^ 10'd610);
+            3'd3: result_0672 = (stage1 << 2);
             
-            3'd4: result_0672 = (~10'd445);
+            3'd4: result_0672 = (8'd255 >> 1);
             
-            3'd5: result_0672 = (stage3 & 10'd161);
+            3'd5: result_0672 = (stage0 + stage0);
             
-            3'd6: result_0672 = (10'd265 + stage3);
+            3'd6: result_0672 = (8'd16 << 2);
             
-            default: result_0672 = stage3;
+            3'd7: result_0672 = (8'd86 ^ 8'd130);
+            
+            default: result_0672 = stage2;
         endcase
     end
 

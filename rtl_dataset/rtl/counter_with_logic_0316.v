@@ -26,18 +26,18 @@ module counter_with_logic_0316(
     
     
     
-    wire [5:0] stage1 = 6'd3;
+    wire [5:0] stage1 = 6'd19;
     
     
     
     always @(*) begin
         case(mode)
             
-            2'd0: result_0316 = 6'd32;
+            2'd0: result_0316 = stage0;
             
-            2'd1: result_0316 = 6'd22;
+            2'd1: result_0316 = 6'd41;
             
-            2'd2: result_0316 = stage1;
+            2'd2: result_0316 = 6'd30;
             
             2'd3: result_0316 = stage0;
             

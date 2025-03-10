@@ -2,100 +2,91 @@
 module complex_datapath_0032(
     input clk,
     input rst_n,
-    input [13:0] a, b, c, d,
+    input [11:0] a, b, c, d,
     input [7:0] mode,
-    output reg [13:0] result_0032
+    output reg [11:0] result_0032
 );
 
     // Internal signals
     
-    reg [13:0] internal0;
+    reg [11:0] internal0;
     
-    reg [13:0] internal1;
+    reg [11:0] internal1;
     
-    reg [13:0] internal2;
+    reg [11:0] internal2;
     
-    reg [13:0] internal3;
+    reg [11:0] internal3;
     
-    reg [13:0] internal4;
+    reg [11:0] internal4;
     
-    reg [13:0] internal5;
-    
-    reg [13:0] internal6;
+    reg [11:0] internal5;
     
     
     // Temporary signals for complex operations
     
-    reg [13:0] temp0;
+    reg [11:0] temp0;
     
-    reg [13:0] temp1;
+    reg [11:0] temp1;
     
-    reg [13:0] temp2;
+    reg [11:0] temp2;
     
-    reg [13:0] temp3;
+    reg [11:0] temp3;
     
-    reg [13:0] temp4;
-    
-    reg [13:0] temp5;
+    reg [11:0] temp4;
     
     
     // Combinational logic
     always @(*) begin
         // First level operations
         
-        internal0 = (a | (~a));
+        internal0 = ((~12'd520) & (~d));
         
-        internal1 = ((14'd8256 >> 3) ^ (14'd7126 | 14'd13182));
+        internal1 = ((d ? 12'd641 : 3224) >> 2);
         
-        internal2 = ((14'd1889 + b) * (a * 14'd8150));
+        internal2 = (~(12'd1133 - d));
         
-        internal3 = ((b - b) - b);
+        internal3 = (b * (a & 12'd3819));
         
-        internal4 = ((c | 14'd8968) * (14'd15272 >> 1));
+        internal4 = (12'd381 | (a >> 2));
         
-        internal5 = ((~d) | (b | c));
-        
-        internal6 = ((c & 14'd14600) * (14'd8165 ? a : 13087));
+        internal5 = ((b ? 12'd2779 : 2500) ^ (b + d));
         
         
         // Second level operations depending on mode
         case(mode[7:4])
             
             4'd0: begin
-                temp0 = (((((~c) ? (internal3 * internal1) : 3505) - ((a | c) << 3)) | (internal1 + (internal3 - (~internal5)))) ^ ((((14'd11661 * 14'd1550) ? (14'd15439 << 2) : 13739) - internal4) * c));
+                temp0 = (internal4 - (((internal4 ^ b) ^ (internal5 ? a : 3382)) ^ ((internal3 * internal5) >> 3)));
+                temp1 = (12'd391 >> 3);
             end
             
             4'd1: begin
-                temp0 = ((c ? (internal3 - ((a * 14'd6668) & (internal4 >> 1))) : 7130) | (((14'd9105 - (c & internal3)) << 2) * (((14'd12241 - internal0) ^ (internal5 * internal1)) * d)));
-                temp1 = (internal6 * d);
+                temp0 = (12'd2639 & ((a << 2) >> 1));
+                temp1 = (~((12'd1486 | (d + internal0)) ? (12'd4071 ^ (12'd1289 << 3)) : 12));
             end
             
             4'd2: begin
-                temp0 = (14'd7756 >> 2);
+                temp0 = (~((12'd2097 * (12'd1107 * a)) ^ ((12'd157 + c) ^ (internal0 | a))));
+                temp1 = ((((a | 12'd661) | (internal4 << 1)) & ((~12'd3736) >> 3)) * (c | internal2));
             end
             
             4'd3: begin
-                temp0 = (((((b >> 2) - (~internal5)) ? ((a + internal6) & internal1) : 6224) | 14'd15066) >> 1);
-                temp1 = ((internal1 - (~(internal1 + (a & internal4)))) & (internal1 >> 3));
+                temp0 = ((a ? (internal0 - 12'd3511) : 4038) | (((12'd642 ? a : 2413) ? (d >> 3) : 1334) - ((internal4 ? b : 2388) ? (internal1 << 3) : 1592)));
             end
             
             4'd4: begin
-                temp0 = (((14'd9976 ^ ((d ? 14'd11317 : 4994) * (internal4 ^ internal3))) ^ (14'd576 << 2)) ? ((c * ((b ? internal0 : 400) + (internal1 | d))) >> 3) : 1976);
-                temp1 = ((internal4 >> 3) * (a ^ 14'd1287));
-                temp2 = (((((a ? internal1 : 4062) & (a & internal3)) + ((b >> 2) >> 1)) * (((internal6 ^ internal5) & (b ^ internal6)) ^ ((internal1 - internal3) + internal3))) ? (((14'd171 >> 3) >> 1) ? (~((internal5 >> 2) ? (14'd13194 + internal0) : 6670)) : 8121) : 6210);
+                temp0 = ((internal4 | c) | (((12'd2973 ^ d) ^ (internal1 + 12'd3457)) ^ (~(internal2 - d))));
+                temp1 = ((((~internal2) >> 3) ^ (internal5 + (12'd1348 >> 2))) << 1);
+                temp2 = ((((a >> 1) >> 3) | (a >> 3)) ? ((internal4 | (c ? 12'd367 : 2859)) << 2) : 407);
             end
             
             4'd5: begin
-                temp0 = (((internal4 >> 1) ^ (~(14'd12459 & 14'd13807))) & internal3);
-            end
-            
-            4'd6: begin
-                temp0 = (internal4 + (((~(internal6 * 14'd11199)) - (internal4 + (internal2 + 14'd7358))) + (c ? ((c | b) - internal5) : 305)));
-                temp1 = (~((internal3 & internal5) & (~d)));
+                temp0 = ((((internal2 - b) ? internal4 : 1310) | ((b * 12'd2576) ? (internal1 * 12'd818) : 1941)) - d);
+                temp1 = (12'd2270 | (((12'd606 + 12'd2353) << 1) >> 1));
             end
             
             default: begin
-                temp0 = (internal5 >> 3);
+                temp0 = (internal5 ? internal5 : 2211);
             end
         endcase
         
@@ -103,35 +94,31 @@ module complex_datapath_0032(
         case(mode[3:0])
             
             4'd0: begin
-                result_0032 = (((14'd14748 - ((internal6 * c) & (internal1 * internal3))) * 14'd6035) << 2);
+                result_0032 = ((temp3 ^ 12'd3148) << 3);
             end
             
             4'd1: begin
-                result_0032 = (((~((b >> 2) + (temp2 + temp1))) | (temp4 - internal0)) + 14'd12227);
+                result_0032 = (temp2 ^ (12'd2031 ? ((internal3 * 12'd3596) >> 3) : 1483));
             end
             
             4'd2: begin
-                result_0032 = (((((temp4 ^ internal1) & (temp2 ^ d)) ^ internal4) >> 2) * ((internal0 + (~temp0)) | internal3));
+                result_0032 = (((temp2 << 1) & b) << 1);
             end
             
             4'd3: begin
-                result_0032 = (temp5 ^ (internal0 ^ ((~(internal3 & c)) | 14'd10220)));
+                result_0032 = ((((temp0 + internal0) ? (internal4 | 12'd1265) : 1009) - ((c ? internal0 : 755) | (internal3 + temp4))) >> 3);
             end
             
             4'd4: begin
-                result_0032 = (((((internal0 << 1) + (14'd13874 ^ 14'd6358)) & ((internal1 ? 14'd14164 : 8232) ? (internal6 - internal2) : 9222)) & internal0) ^ 14'd12957);
+                result_0032 = (((~(~internal2)) ? ((~12'd1943) * (c << 2)) : 1518) ? internal2 : 2261);
             end
             
             4'd5: begin
-                result_0032 = (internal6 ? internal0 : 6262);
-            end
-            
-            4'd6: begin
-                result_0032 = (internal6 | (((internal6 | (temp5 ? internal2 : 14788)) | (14'd1172 - (b * internal6))) << 3));
+                result_0032 = (internal5 & (((temp3 ? 12'd1109 : 21) + (internal5 & internal4)) - ((internal1 & c) * 12'd437)));
             end
             
             default: begin
-                result_0032 = ((14'd7219 ? internal2 : 12230) | (d ^ a));
+                result_0032 = (a ^ (internal0 >> 1));
             end
         endcase
     end

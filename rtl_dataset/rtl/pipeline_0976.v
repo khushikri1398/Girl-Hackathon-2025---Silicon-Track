@@ -2,49 +2,35 @@
 module pipeline_0976(
     input clk,
     input rst_n,
-    input [9:0] data_in,
-    input [2:0] control,
-    output reg [9:0] result_0976
+    input [5:0] data_in,
+    input [1:0] control,
+    output reg [5:0] result_0976
 );
 
     // Pipeline registers
     
-    reg [9:0] stage0_reg;
-    wire [9:0] stage0_next;
+    reg [5:0] stage0_reg;
+    wire [5:0] stage0_next;
     
-    reg [9:0] stage1_reg;
-    wire [9:0] stage1_next;
+    reg [5:0] stage1_reg;
+    wire [5:0] stage1_next;
     
-    reg [9:0] stage2_reg;
-    wire [9:0] stage2_next;
-    
-    reg [9:0] stage3_reg;
-    wire [9:0] stage3_next;
-    
-    reg [9:0] stage4_reg;
-    wire [9:0] stage4_next;
+    reg [5:0] stage2_reg;
+    wire [5:0] stage2_next;
     
     
     // Combinational logic for each stage
     
     
-    assign stage0_next = (10'd551 ^ 10'd230);
+    assign stage0_next = 6'd18;
     
     
     
-    assign stage1_next = (10'd510 + control);
+    assign stage1_next = 6'd51;
     
     
     
-    assign stage2_next = (10'd794 >> 1);
-    
-    
-    
-    assign stage3_next = (~10'd640);
-    
-    
-    
-    assign stage4_next = (10'd42 ^ 10'd1013);
+    assign stage2_next = stage1_reg;
     
     
     
@@ -52,15 +38,11 @@ module pipeline_0976(
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             
-            stage0_reg <= 10'd0;
+            stage0_reg <= 6'd0;
             
-            stage1_reg <= 10'd0;
+            stage1_reg <= 6'd0;
             
-            stage2_reg <= 10'd0;
-            
-            stage3_reg <= 10'd0;
-            
-            stage4_reg <= 10'd0;
+            stage2_reg <= 6'd0;
             
         end else begin
             
@@ -76,14 +58,6 @@ module pipeline_0976(
             stage2_reg <= stage2_next;
             
             
-            
-            stage3_reg <= stage3_next;
-            
-            
-            
-            stage4_reg <= stage4_next;
-            
-            
         end
     end
     
@@ -91,17 +65,13 @@ module pipeline_0976(
     always @(*) begin
         case(control)
             
-            3'd0: result_0976 = stage0_reg;
+            2'd0: result_0976 = stage0_reg;
             
-            3'd1: result_0976 = stage1_reg;
+            2'd1: result_0976 = stage1_reg;
             
-            3'd2: result_0976 = stage2_reg;
+            2'd2: result_0976 = stage2_reg;
             
-            3'd3: result_0976 = stage3_reg;
-            
-            3'd4: result_0976 = stage4_reg;
-            
-            default: result_0976 = stage4_reg;
+            default: result_0976 = stage2_reg;
         endcase
     end
 
