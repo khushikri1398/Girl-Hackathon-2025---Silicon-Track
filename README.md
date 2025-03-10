@@ -79,7 +79,7 @@ We experimented with the following **ML algorithms** to predict combinational de
 | Gradient Boosting | Good performance, but slower |
 
 ### **Why Linear Regression?**  
-✅ **High Correlation (0.9598)** between **estimated and actual depths**  
+✅ **High Correlation (0.97996)** between **estimated and actual depths**  
 ✅ **Interpretable** → Designers can understand how different factors impact combinational depth  
 ✅ **Computationally Efficient** → Works well for large-scale RTL designs  
 
@@ -87,9 +87,9 @@ We experimented with the following **ML algorithms** to predict combinational de
 
 ## **Results & Insights**  
 📌 **Dataset Size:** 1,000 RTL designs  
-📌 **Correlation (Estimated vs. Actual Depth):** **0.9598**  
-📌 **Mean Estimated Depth:** **15.078**  
-📌 **Mean Actual Depth:** **14.573**  
+📌 **Correlation (Estimated vs. Actual Depth):** **0.97996**  
+📌 **Mean Estimated Depth:** **15.715**  
+📌 **Mean Actual Depth:** **15.182**  
 📌 **Complexity Range:** **1 - 5**  
 
 👉 Our model successfully predicts **logic depth with high accuracy**, making it useful for **early-stage RTL timing analysis**.
